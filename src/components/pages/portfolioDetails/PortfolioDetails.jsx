@@ -1,8 +1,13 @@
 import React from 'react'
+import HeroSection from './portfolioDetailsComponents/HeroSection'
+import GoldStory from './portfolioDetailsComponents/GoldStory'
 
 const PortfolioDetails = () => {
   return (
-    <div>PortfolioDetails</div>
+    <div className="w-full">
+      <HeroSection/>
+      <GoldStory/>
+    </div>
   )
 }
 
