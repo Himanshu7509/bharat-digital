@@ -1,8 +1,15 @@
+import Header from '@/components/common/header/Header'
 import React from 'react'
+import ContactForm from './contactUsComponents/ContactForm'
+import Footer from '@/components/common/footer/Footer'
 
 const ContactUs = () => {
   return (
-    <div>ContactUs</div>
+    <>
+    <Header/>
+    <ContactForm/>
+    <Footer/>
+    </>
   )
 }
 
