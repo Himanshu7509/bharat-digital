@@ -7,6 +7,8 @@ import AchievementsPage from './aboutUsComponents/AchievementsPage'
 import TimeLineComponent from './aboutUsComponents/TimeLineComponent'
 import ContactNow from './aboutUsComponents/ContactNow'
 import Footer from '@/components/common/footer/Footer'
+import WhoWeAre from '../home/homeComponents/WhoWeAre'
+import OurQuestion from '../home/homeComponents/OurQuestion'
 
 
 const AboutUs = () => {
@@ -15,9 +17,11 @@ const AboutUs = () => {
       <Header/>
 <AboutHero/>
 <PartnerLogos/>
+<WhoWeAre/>
 <VisionMission/>
 <AchievementsPage/>
 <TimeLineComponent/>
+<OurQuestion/>
 <ContactNow/>
 <Footer/>
 
