@@ -1,30 +1,31 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import bannerimg from '@/components/assets/question.png';
+import bannerimg from "@/components/assets/question.png";
 import { Plus, X } from "lucide-react";
+import arrow from "@/components/assets/Vector.png";
 
 const faqData = [
   {
     question: "WHAT DO I HAVE FOR INSTALLATION?",
     answer:
-      "Each demo built with Teba will look different. You can customize almost anything in the appearance of your website with only a few clicks. Each demo built different."
+      "Each demo built with Teba will look different. You can customize almost anything in the appearance of your website with only a few clicks. Each demo built different.",
   },
   {
     question: "HOW MUCH DOES LOGO DESIGN SERVICES COST?",
     answer:
-      "Prices vary depending on complexity and package, but we offer affordable rates tailored to your needs."
+      "Prices vary depending on complexity and package, but we offer affordable rates tailored to your needs.",
   },
   {
     question: "HOW TO SOFT LAUNCH YOUR BUSINESS?",
     answer:
-      "We help you plan, design, and implement a soft launch strategy tailored to your market."
+      "We help you plan, design, and implement a soft launch strategy tailored to your market.",
   },
   {
     question: "HOW DOES THE TRIAL WORK?",
     answer:
-      "You get full access to all features during the trial period, with no obligation to purchase."
-  }
+      "You get full access to all features during the trial period, with no obligation to purchase.",
+  },
 ];
 
 const OurQuestion = () => {
@@ -39,10 +40,12 @@ const OurQuestion = () => {
       {/* Left Section */}
       <div className="w-full md:w-1/2 space-y-8">
         <div>
-          <p className="text-[#4F6BF0] font-semibold uppercase">Our Question</p>
+          <p className="text-[#4F6BF0] text-[25px] font-raleway uppercase flex items-center">
+                        OUR QUESTION
+                        <Image src={arrow} alt="arrow" width={40} height={10} className="ml-2" />
+                      </p>
           <h2 className="Heading leading-[70px]">
-            Have any questions?
-            Here some answers
+            Have any questions? Here some answers
           </h2>
         </div>
         <div>
@@ -54,7 +57,9 @@ const OurQuestion = () => {
             height={300}
           />
           <p className="mt-3 flex items-center gap-2 text-lg">
-            <span className="text-white font-semibold">📞 +12 608 (3456) 789</span>
+            <span className="text-white font-semibold">
+              📞 +12 608 (3456) 789
+            </span>
           </p>
         </div>
       </div>
@@ -62,10 +67,7 @@ const OurQuestion = () => {
       {/* Right Section */}
       <div className="w-full md:w-1/2 space-y-6">
         {faqData.map((item, index) => (
-          <div
-            key={index}
-            className="border-b border-[#2f2f2f] pb-4"
-          >
+          <div key={index} className="border-b border-[#2f2f2f] pb-4">
             <div
               onClick={() => toggleAnswer(index)}
               className="flex justify-between items-center cursor-pointer"

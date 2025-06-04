@@ -32,3 +32,73 @@
 .animate-marquee {
   animation: marquee 20s linear infinite;
 }
+
+p {
+  font-family: 'Raleway', sans-serif;
+}
+
+.RalewayButtons {
+  font-family: 'Raleway', sans-serif;
+
+}
+
+.BigCustomHeading {
+  font-size: 18px;
+  font-weight: 600;
+
+}
+
+.NormalCustomHeading {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.BigCustomParagraph {
+  font-size: 8px;
+  font-weight: 600;
+
+}
+
+.NormalCustomParagraph {
+  font-size: 7px;
+  font-weight: 500;
+
+}
+
+@media (min-width: 768px) {
+  .BigCustomHeading {
+    font-size: 35px;
+  }
+
+  .NormalCustomHeading {
+    font-size: 25px;
+  }
+
+  .BigCustomParagraph {
+    font-size: 17px;
+  }
+
+  .NormalCustomParagraph {
+    font-size: 18px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .BigCustomHeading {
+    font-size: 55px;
+  }
+
+  .NormalCustomHeading {
+    font-size: 55px;
+  }
+
+  .BigCustomParagraph {
+    font-size: 35px;
+  }
+
+  .NormalCustomParagraph {
+    font-size: 25px;
+  }
+
+}
