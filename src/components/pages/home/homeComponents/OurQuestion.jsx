@@ -4,6 +4,7 @@ import Image from "next/image";
 import bannerimg from "@/components/assets/question.png";
 import { Plus, X } from "lucide-react";
 import arrow from "@/components/assets/Vector.png";
+import phone from "@/components/assets/phone.png"
 
 const faqData = [
   {
@@ -41,33 +42,39 @@ const OurQuestion = () => {
       <div className="w-full md:w-1/2 space-y-8">
         <div>
           <p className="text-[#4F6BF0] text-[25px] font-raleway uppercase flex items-center">
-                        OUR QUESTION
-                        <Image src={arrow} alt="arrow" width={40} height={10} className="ml-2" />
-                      </p>
+            OUR QUESTION
+            <Image src={arrow} alt="Arrow" width={80} height={9} className="ml-2" />
+          </p>
           <h2 className="Heading leading-[70px]">
             Have any questions? Here some answers
           </h2>
         </div>
-        <div>
+
+        {/* Image with gradient and number */}
+        <div className="relative w-full max-w-[650px]">
           <Image
             src={bannerimg}
             alt="question"
-            className="rounded-lg"
-            width={500}
-            height={300}
+            className="rounded-lg w-full object-cover"
+            width={650}
+            height={400}
           />
-          <p className="mt-3 flex items-center gap-2 text-lg">
-            <span className="text-white font-semibold">
-              📞 +12 608 (3456) 789
-            </span>
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-lg" />
+          {/* Phone Number */}
+          <p className="absolute bottom-5 left-5 text-[30px] flex items-center gap-2 font-semibold text-[#FEFEFE]">
+            <span><Image src={phone} alt="phone" width={35} height={35}/></span> +12 608 (3456) 789
           </p>
         </div>
       </div>
 
-      {/* Right Section */}
+      {/* Right Section - FAQ */}
       <div className="w-full md:w-1/2 space-y-6">
         {faqData.map((item, index) => (
-          <div key={index} className="border-b border-[#2f2f2f] pb-4">
+          <div
+            key={index}
+            className="border-b border-[#2f2f2f] overflow-hidden transition-all duration-300"
+          >
             <div
               onClick={() => toggleAnswer(index)}
               className="flex justify-between items-center cursor-pointer"
@@ -81,16 +88,20 @@ const OurQuestion = () => {
                 <Plus size={20} className="text-white" />
               )}
             </div>
-            {openIndex === index && (
-              <p className="text-[#C0C0C0] mt-3 text-[22px] font-medium leading-[30px]">
+            <div
+              className={`transition-max-height duration-500 ease-in-out overflow-hidden ${
+                openIndex === index ? "max-h-[500px] mt-3" : "max-h-0"
+              }`}
+            >
+              <p className="text-[#C0C0C0] text-[22px] font-medium leading-[30px]">
                 {item.answer}
               </p>
-            )}
+            </div>
           </div>
         ))}
-        <button className="mt-6 px-6 py-3 rounded bg-gradient-to-r from-[#4F6BF0] to-[#00D1FF] text-white font-semibold text-sm uppercase">
-          See All Questions
-        </button>
+        <button className="mt-6 bg-gradient-to-r from-[#4F6BF0] to-[#25BAC3] text-white px-6 py-3 uppercase rounded-sm font-semibold text-[25px]">
+            See All Questions
+          </button>
       </div>
     </div>
   );

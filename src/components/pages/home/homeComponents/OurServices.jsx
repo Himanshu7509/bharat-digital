@@ -33,7 +33,7 @@ const OurServices = () => {
           
             <p className="text-[#4F6BF0] text-[25px] font-raleway uppercase flex items-center">
               OUR SERVICES
-              <Image src={arrow} alt="arrow" width={40} height={10} className="ml-2" />
+              <Image src={arrow} alt="Arrow" width={80} height={9} className="ml-2" />
             </p>
           
            <div className="w-full flex justify-between items-center">

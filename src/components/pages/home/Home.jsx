@@ -6,6 +6,8 @@ import MarqueeBanner from './homeComponents/MarqueeBanner'
 import WhyChooseUs from './homeComponents/WhyChooseUs'
 import OurServices from './homeComponents/OurServices'
 import OurQuestion from './homeComponents/OurQuestion'
+import PartnerLogos from '../aboutus/aboutUsComponents/PartnerLogos'
+import OurClient from './homeComponents/OurClient'
 
 const Home = () => {
   return (
@@ -16,7 +18,9 @@ const Home = () => {
     <MarqueeBanner/>
     <WhyChooseUs/>
     <OurServices/>
+    <PartnerLogos/>
     <OurQuestion/>
+    <OurClient/>  
     </>
   )
 }
