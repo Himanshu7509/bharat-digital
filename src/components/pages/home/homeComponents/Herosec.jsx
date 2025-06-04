@@ -28,22 +28,24 @@ const Herosec = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 5000); 
-    return () => clearInterval(interval); 
+    }, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
+      {/* Slide wrapper (horizontal scroll) */}
       <div
-        className="transition-transform duration-700 ease-in-out"
+        className="flex transition-transform duration-700 ease-in-out"
         style={{
-          transform: `translateY(-${activeIndex * 100}vh)`,
+          width: `${slides.length * 100}vw`,
+          transform: `translateX(-${activeIndex * 100}vw)`,
         }}
       >
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="w-full h-screen bg-cover bg-center flex items-center justify-between px-20"
+            className="w-screen h-screen bg-cover bg-center flex items-center justify-between px-20"
             style={{
               backgroundImage: `url(${slide.background})`,
             }}
@@ -60,6 +62,8 @@ const Herosec = () => {
                   VIEW OUR WORKS
                 </button>
               </div>
+
+              {/* Right-side numbered indicators */}
               <div className="relative z-10 flex flex-col gap-10 items-center">
                 {[0, 1, 2].map((i) => (
                   <button
