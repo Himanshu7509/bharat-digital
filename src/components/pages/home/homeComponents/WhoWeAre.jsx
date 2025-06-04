@@ -2,14 +2,15 @@ import React from 'react';
 import Image from 'next/image';
 import Img1 from '@/components/assets/w1.png';
 import Img2 from '@/components/assets/w2.png';
+import arrow from '@/components/assets/Vector.png'
 
 const WhoWeAre = () => {
   return (
-    <div className="bg-[#0D0D0D] text-white px-10 py-20">
+    <div className="bg-[#0D0D0D] text-white px-10 py-5 w-full h-screen">
       <div className="flex flex-col lg:flex-row items-start justify-between gap-10">
    
         <div className="flex-1">
-          <p className="text-sm text-[#E0E0E0] uppercase tracking-widest mb-2 relative pl-4 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-[2px] before:bg-[#3F66FB]">
+          <p className="text-sm text-[#E0E0E0] uppercase">
             Who We Are
           </p>
           <h2 className="text-4xl sm:text-5xl font-bold leading-tight text-white mb-5">
