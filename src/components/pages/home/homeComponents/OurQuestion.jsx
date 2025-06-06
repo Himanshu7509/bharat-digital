@@ -50,7 +50,6 @@ const OurQuestion = () => {
           </h2>
         </div>
 
-        {/* Image with gradient and number */}
         <div className="relative w-full max-w-[650px]">
           <Image
             src={bannerimg}
@@ -59,16 +58,14 @@ const OurQuestion = () => {
             width={650}
             height={400}
           />
-          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-lg" />
-          {/* Phone Number */}
+         
           <p className="absolute bottom-5 left-5 text-[30px] flex items-center gap-2 font-semibold text-[#FEFEFE]">
             <span><Image src={phone} alt="phone" width={35} height={35}/></span> +12 608 (3456) 789
           </p>
         </div>
       </div>
 
-      {/* Right Section - FAQ */}
       <div className="w-full md:w-1/2 space-y-6">
         {faqData.map((item, index) => (
           <div

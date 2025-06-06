@@ -8,6 +8,10 @@ import OurServices from './homeComponents/OurServices'
 import OurQuestion from './homeComponents/OurQuestion'
 import PartnerLogos from '../aboutus/aboutUsComponents/PartnerLogos'
 import OurClient from './homeComponents/OurClient'
+import OurLatestArticle from './homeComponents/OurLatestArticle'
+import FreeTrail from './homeComponents/FreeTrail'
+import GetInTouch from './homeComponents/GetInTouch'
+import Footer from '@/components/common/footer/Footer'
 
 const Home = () => {
   return (
@@ -21,6 +25,10 @@ const Home = () => {
     <PartnerLogos/>
     <OurQuestion/>
     <OurClient/>  
+    <OurLatestArticle/>
+    <FreeTrail/>
+    <GetInTouch/>
+    <Footer/>
     </>
   )
 }
