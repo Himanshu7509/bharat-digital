@@ -25,7 +25,7 @@ const ProjectGallery = () => {
             <Image 
               src={img2} 
               alt="Multiple Application Screens" 
-              className="w-full h-full max-w-full object-contain rounded-lg ml-40" 
+              className="w-full h-full max-w-full object-contain rounded-lg ml-50 " 
             />
           </div>
         </div>

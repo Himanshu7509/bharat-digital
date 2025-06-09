@@ -66,6 +66,12 @@ p {
 
 }
 
+.FaqHeading {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+}
+
 @media (min-width: 768px) {
   .BigCustomHeading {
     font-size: 35px;
@@ -81,6 +87,10 @@ p {
 
   .NormalCustomParagraph {
     font-size: 18px;
+  }
+
+  .FaqHeading {
+    font-size: 14px;
   }
 
 }
@@ -101,5 +111,10 @@ p {
   .NormalCustomParagraph {
     font-size: 25px;
   }
+
+  .FaqHeading {
+    font-size: 30px;
+  }
+
 
 }
