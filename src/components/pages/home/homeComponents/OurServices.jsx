@@ -5,6 +5,7 @@ import webIcon from "@/components/assets/web.png";
 import appIcon from "@/components/assets/app.png";
 import uiIcon from "@/components/assets/ui.png";
 import urarrow from '@/components/assets/ur-arrow.png'
+import Link from "next/link";
 
 const services = [
   {
@@ -40,9 +41,11 @@ const OurServices = () => {
              <h2 className="Heading leading-[70px]">
               Turn Information Into Actionable Insights
             </h2>
-          <button className="bg-[#4F6BF0] text-white px-6 py-2 flex justify-center items-center rounded-sm font-semibold text-[22px]">
+          <Link href="/services">
+          <button className="bg-[#4F6BF0] text-white px-6 py-2 cursor-pointer flex justify-center items-center rounded-sm font-semibold text-[22px]">
             More Services <span><Image src={urarrow} alt="urarrow" width={40}/></span>
           </button>
+          </Link>
            </div>
         </div>
 

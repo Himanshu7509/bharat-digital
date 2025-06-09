@@ -9,7 +9,7 @@ import OurQuestion from './homeComponents/OurQuestion'
 import PartnerLogos from '../aboutus/aboutUsComponents/PartnerLogos'
 import OurClient from './homeComponents/OurClient'
 import OurLatestArticle from './homeComponents/OurLatestArticle'
-import FreeTrail from './homeComponents/FreeTrail'
+import FreeTrail from '../../common/freeTrialBanner/FreeTrail'
 import GetInTouch from './homeComponents/GetInTouch'
 import Footer from '@/components/common/footer/Footer'
 
