@@ -1,8 +1,11 @@
+import Header from '@/components/common/header/Header'
 import React from 'react'
 
 const ErpDevelopment = () => {
   return (
-    <div>ErpDevelopment</div>
+    <div>
+      <Header/>
+    </div>
   )
 }
 

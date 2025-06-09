@@ -6,6 +6,7 @@ import OurValues from '../commonComponents/ourValues/OurValues'
 import OurProcess from '../commonComponents/ourProcess/OurProcess'
 import WebApproach from './webComponents/WebApproach'
 import OurTech from '../commonComponents/ourTech/OurTech'
+import FreeTrail from '@/components/common/freeTrialBanner/FreeTrail'
 
 const WebDevelopment = () => {
   return (
@@ -16,6 +17,7 @@ const WebDevelopment = () => {
       <OurProcess/>
       <WebApproach/>
       <OurTech/>
+      <FreeTrail/>
       <Footer/>
     </div>
   )

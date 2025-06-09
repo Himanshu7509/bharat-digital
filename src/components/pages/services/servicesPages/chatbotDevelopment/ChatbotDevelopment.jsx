@@ -1,8 +1,11 @@
+import Header from '@/components/common/header/Header'
 import React from 'react'
 
 const ChatbotDevelopment = () => {
   return (
-    <div>ChatbotDevelopment</div>
+    <div>
+      <Header/>
+    </div>
   )
 }
 

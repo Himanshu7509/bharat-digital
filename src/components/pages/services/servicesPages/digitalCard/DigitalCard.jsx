@@ -1,7 +1,7 @@
 import Header from '@/components/common/header/Header'
 import React from 'react'
 
-const WebSecurity = () => {
+const DigitalCard = () => {
   return (
     <div>
       <Header/>
@@ -9,4 +9,4 @@ const WebSecurity = () => {
   )
 }
 
-export default WebSecurity
+export default DigitalCard

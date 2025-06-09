@@ -1,8 +1,11 @@
+import Header from '@/components/common/header/Header'
 import React from 'react'
 
 const UiDesign = () => {
   return (
-    <div>UiDesign</div>
+    <div>
+      <Header/>
+    </div>
   )
 }
 

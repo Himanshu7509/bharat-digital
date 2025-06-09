@@ -1,8 +1,11 @@
+import Header from '@/components/common/header/Header'
 import React from 'react'
 
 const AIPage = () => {
   return (
-    <div>AIPage</div>
+    <div>
+      <Header/>
+    </div>
   )
 }
 
