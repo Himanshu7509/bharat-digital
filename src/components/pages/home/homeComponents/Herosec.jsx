@@ -34,7 +34,7 @@ const Herosec = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      {/* Slide wrapper (horizontal scroll) */}
+    
       <div
         className="flex transition-transform duration-700 ease-in-out"
         style={{
@@ -52,7 +52,7 @@ const Herosec = () => {
           >
             <div className="flex justify-between items-center w-full">
               <div>
-                <h1 className="whitespace-pre-line text-[80px] font-bold w-[686px] text-[#FEFEFE] uppercase leading-[95px]">
+                <h1 className="whitespace-pre-line text-[80px] font-bold w-[826px] text-[#FEFEFE] uppercase leading-[95px]">
                   {slide.title}
                 </h1>
                 <p className="mt-6 w-[790px] text-[24px] text-[#F9F9F9]">
