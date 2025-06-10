@@ -10,9 +10,17 @@ import img6 from "@/components/assets/p6.png";
 import img7 from "@/components/assets/p7.png";
 import img8 from "@/components/assets/p8.png";
 import img9 from "@/components/assets/p9.png";
+import GameImage from '@/components/assets/gameHero.png'
+import img10 from "@/components/assets/p10.png";
+import img11 from "@/components/assets/p11.png";
+import img12 from "@/components/assets/p12.png";
+import img13 from "@/components/assets/p13.png";
+import img14 from "@/components/assets/p14.png";
+import rightImg1 from '@/components/assets/ap0.png';
 import UiImage from '@/components/assets/uiHero.png'
 import img15 from "@/components/assets/p15.png";
 import img16 from "@/components/assets/p16.png";
+import rightImg2 from '@/components/assets/ap2.png';
 import SoftImage from '@/components/assets/softHero.png'
 import img17 from "@/components/assets/p17.png";
 import img18 from "@/components/assets/p18.png";
@@ -20,6 +28,26 @@ import img19 from "@/components/assets/p19.png";
 import img20 from "@/components/assets/p20.png";
 import img21 from "@/components/assets/p21.png";
 import rightImg3 from '@/components/assets/ap3.png';
+import chatbotImage from '@/components/assets/chatbotHero.png'
+import img22 from "@/components/assets/p22.png";
+import img23 from "@/components/assets/p23.png";
+import img24 from "@/components/assets/p24.png";
+import img25 from "@/components/assets/p25.png";
+import img26 from "@/components/assets/p26.png";
+import rightImg4 from '@/components/assets/ap4.png';
+import aiImage from '@/components/assets/aiHero.png'
+import img27 from "@/components/assets/p27.png";
+import img28 from "@/components/assets/p28.png";
+import img29 from "@/components/assets/p29.png";
+import img30 from "@/components/assets/p30.png";
+import img31 from "@/components/assets/p31.png";
+import rightImg5 from '@/components/assets/ap5.png';
+import digitalImage from '@/components/assets/digitalHero.png'
+import img32 from "@/components/assets/p32.png";
+import img33 from "@/components/assets/p33.png";
+import img34 from "@/components/assets/p34.png";
+import img35 from "@/components/assets/p35.png";
+import img36 from "@/components/assets/p36.png";
 
 
 
@@ -124,6 +152,56 @@ const servicesData = {
     ],
   },
 
+  "game-development": {
+    HeroBanner: [
+      {
+        title: "Game Development",
+        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
+        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+        bannerImage: GameImage,
+        gradientColor: ["#00020C", "#273B97"]
+      },
+    ],
+    OurProcess: [
+      {
+          title: 'Concept and Planning',
+          subtitle: 'Laying the Foundation of the Game Idea',
+          desc: `Game development begins with a clear concept—what the game is about, its genre, storyline, gameplay mechanics, and target audience. A game design document (GDD) is often created at this stage, outlining all the essential details. Planning ensures the project stays within scope, budget, and timeline, setting the stage for smooth development.`,
+          img: img10,
+        },
+        {
+          title: 'Game Design and Storyboarding',
+          subtitle: 'Designing Characters, Worlds, and Interactions',
+          desc: `This stage focuses on visualizing and detailing the game world, characters, levels, and player interactions. Storyboarding helps map out the sequence of events, dialogues, animations, and challenges. Designers create wireframes, sketches, and concept art to ensure the game looks and feels engaging and immersive for the players.`,
+          img: img11,
+        },
+        {
+          title: 'Development and Programming',
+          subtitle: 'Building the Game Mechanics and Logic',
+          desc: `Game developers begin coding using game engines like Unity, Unreal Engine, or Godot. They program character movements, game rules, AI behavior, user interfaces, and multiplayer features. This phase often includes collaboration between designers, programmers, and sound engineers to bring the game to life with functional gameplay and interactivity.`,
+          img: img12,
+        },
+        {
+          title: 'Testing and Debugging',
+          subtitle: 'Ensuring Smooth and Bug-Free Gameplay',
+          desc: `Testing is vital to catch bugs, glitches, and performance issues. Playtesting also helps evaluate if the game is fun, balanced, and user-friendly. Different types of testing—such as alpha, beta, unit, and regression testing—are used to ensure the game meets quality standards and provides a smooth user experience.`,
+          img: img13,
+        },
+        {
+          title: 'Launch and Post-Launch Support',
+          subtitle: 'Releasing the Game and Engaging Players',
+          desc: `After final testing, the game is launched on platforms like Steam, PlayStation, Xbox, or mobile stores. Post-launch, developers monitor player feedback, fix bugs, and roll out updates or new content. Continuous support helps maintain player interest, improve game ratings, and extend the game's life cycle.`,
+          img: img14,
+        },
+    ],
+    OurApproach: [
+      {
+        heading: "Benefits of Bharatdigital for Game Development Services",
+        rightImage: rightImg1,
+      },
+    ],
+  },
+
   "ui-design": {
     HeroBanner: [
       {
@@ -139,13 +217,13 @@ const servicesData = {
           title: 'Research and Discovery',
           subtitle: 'Understanding Users and Business Goals',
           desc: `The first step in UI/UX design is to gather information about the target users, their needs, behaviors, and pain points. This involves user interviews, surveys, market research, and competitive analysis. The goal is to align the design with both user expectations and business objectives, forming a solid foundation for the rest of the process.`,
-          img: img17,
+          img: img1,
         },
         {
           title: 'Design (UI/UX)',
           subtitle: 'Refine your core product value',
           desc: `Once research is complete, designers organize the app or website content in a way that is logical and easy to navigate. This is done through Information Architecture (IA), which defines the flow and structure. Wireframes—basic visual guides—are then created to outline the layout of each screen without detailed design elements.`,
-          img: img18,
+          img: img7,
         },
         {
           title: 'Prototyping and Interaction Design',
@@ -163,13 +241,13 @@ const servicesData = {
           title: 'Launch & Maintenance',
           subtitle: 'Evolve to drive breakout success',
           desc: `Post-launch, we analyze customer feedback to uncover high-impact improvements grounded in real user experiences. Simultaneously, we refine workflows and deploy fast-follow features through a dynamic feedback loop that quickly adapts to evolving user needs. This agile, results-driven approach drives swift, continuous innovation and positions your product for lasting market success.`,
-          img: img21,
+          img: img9,
         },
     ],
     OurApproach: [
       {
-        heading: "Benefits of Bharatdigital for App Development Services",
-        rightImage: rightImg3,
+        heading: "Benefits of Bharatdigital for UI/UX Design Services",
+        rightImage: rightImg2,
       },
     ],
   },
@@ -220,6 +298,156 @@ const servicesData = {
       {
         heading: "Benefits of Bharatdigital for Software Development Services",
         rightImage: rightImg3,
+      },
+    ],
+  },
+
+  "chatbot-development": {
+    HeroBanner: [
+      {
+        title: "Chatbot Development",
+        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
+        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+        bannerImage: chatbotImage,
+        gradientColor: ["#303D72", "#111427"]
+      },
+    ],
+    OurProcess: [
+      {
+          title: 'Requirement Gathering and Goal Definition',
+          subtitle: 'Identifying the Purpose and Target Users',
+          desc: `The first step in chatbot development is understanding why the chatbot is being built. Is it for customer service, lead generation, FAQs, or internal automation? This stage involves identifying the target audience, defining the scope, and listing out specific use cases the chatbot will handle.`,
+          img: img22,
+        },
+        {
+          title: 'Designing the Conversation Flow',
+          subtitle: 'Creating User Scenarios and Dialogues',
+          desc: `Once goals are clear, the conversation design phase begins. This involves mapping out dialogue trees, user intents, responses, and possible paths users can take. Designers and content creators collaborate to make the chatbot's interactions feel natural, helpful, and engaging, keeping both human tone and business objectives in mind.`,
+          img: img23,
+        },
+        {
+          title: 'Choosing the Technology and Platform',
+          subtitle: 'Selecting Tools, Frameworks, and Channels',
+          desc: `Based on the chatbot’s complexity, the right platform is chosen—such as Dialogflow, Microsoft Bot Framework, Rasa, or ChatGPT API. You’ll also decide where the chatbot will live—on websites, mobile apps, WhatsApp, Facebook Messenger, or Slack. The tech stack includes choosing programming languages, databases, and NLP tools for effective communication.`,
+          img: img24,
+        },
+        {
+          title: 'Development and Integration',
+          subtitle: 'Building the Bot and Connecting It with Systems',
+          desc: `In this stage, developers begin building the bot logic, setting up NLP (Natural Language Processing), and integrating it with APIs, databases, or CRMs. The chatbot is connected to external systems to fetch or send data in real-time, making it more dynamic and interactive. The bot is tested thoroughly for each use case before it goes live.`,
+          img: img25,
+        },
+        {
+          title: 'Testing, Training, and Deployment',
+          subtitle: 'Refining the Experience and Going Live',
+          desc: `Before launch, the chatbot is tested with real users and trained with actual conversations to improve its responses. Based on feedback, the bot’s language, accuracy, and behavior are fine-tuned. Once polished, the chatbot is deployed on the selected platform.`,
+          img: img26,
+        },
+    ],
+    OurApproach: [
+      {
+        heading: "Benefits of Bharatdigital for Chatbot Development Services",
+        rightImage: rightImg4,
+      },
+    ],
+  },
+
+  "ai-ml": {
+    HeroBanner: [
+      {
+        title: "AI/ML",
+        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
+        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+        bannerImage: aiImage,
+        gradientColor: ["#060829", "#060829"]
+      },
+    ],
+    OurProcess: [
+      {
+          title: 'Defining the Goal Clearly',
+          subtitle: 'Understanding What to Solve and Why',
+          desc: `Together, we shape your MVP by aligning customer insights, business goals, and core product value into a clearly defined scope. Through weekly demos and strategic discussions, we partner closely with you to refine use cases, perfect customer journeys, and solidify technical architecture, transforming them into clear, actionable requirements that drive impactful results.`,
+          img: img27,
+        },
+        {
+          title: 'Data Collection and Preparation',
+          subtitle: 'Data Collection and Preparation',
+          desc: `We begin with your product vision and brand principles, exploring diverse concepts and honing them into a polished, high-fidelity design. Our process emphasizes flexibility and scalability, leveraging modular components to seamlessly support future updates and features. At each stage, we focus on delivering intuitive, delightful experiences that make your product exceptional.`,
+          img: img28,
+        },
+        {
+          title: 'Model Selection and Training',
+          subtitle: 'Model Selection and Training',
+          desc: `The build phase kicks off with a comprehensive project plan, mapping out user flows and engineering tasks in detail. We accelerate development through strategic decisions on architecture, leveraging existing APIs, and adopting efficient design systems to minimize build time and ensure scalability. As build completion approaches.`,
+          img: img29,
+        },
+        {
+          title: 'Model Evaluation and Tuning',
+          subtitle: 'Evaluating model performance',
+          desc: `After training, the model is tested on a separate validation or test dataset to evaluate its accuracy, precision, recall, and other metrics. Techniques like cross-validation, confusion matrices, and ROC curves are used for assessment.`,
+          img: img30,
+        },
+        {
+          title: 'Deployment and Monitoring',
+          subtitle: 'Making the Model Live and Keeping It Effective',
+          desc: `Once a model performs well, it's deployed into a real-world environment—embedded into an app, website, or backend system. Deployment can be done via APIs, cloud platforms, or edge devices. Post-deployment, monitoring is crucial to track performance, detect drift in data, and retrain the model as needed to ensure long-term success.`,
+          img: img31,
+        },
+    ],
+    OurApproach: [
+      {
+        heading: "Benefits of Bharatdigital for AI/ML Services",
+        rightImage: rightImg5,
+      },
+    ],
+  },
+
+  "digital-marketing": {
+    HeroBanner: [
+      {
+        title: "Digital Marketing & Solutions",
+        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
+        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+        bannerImage: digitalImage,
+        gradientColor: ["#07344B", "#07344B"]
+      },
+    ],
+    OurProcess: [
+      {
+          title: 'Market Research and Strategy Planning',
+          subtitle: 'Know your audience and set clear goals',
+          desc: `Every successful digital marketing campaign begins with thorough market research. This involves analyzing target demographics, customer behavior, market trends, and competitors.`,
+          img: img32,
+        },
+        {
+          title: 'Content Creation and Optimization',
+          subtitle: 'Creating Engaging Content for All Platforms',
+          desc: `Content is the backbone of digital marketing. Whether it's blogs, videos, social media posts, emails, or landing pages, content should be engaging, informative, and SEO-optimized. High-quality content builds trust, drives organic traffic, and communicates the brand’s message effectively across digital platforms.`,
+          img: img33,
+        },
+        {
+          title: 'Multi-Channel Marketing Execution',
+          subtitle: 'Promoting Across Various Digital Platforms',
+          desc: `Once the content and strategy are in place, the next step is executing campaigns through channels like SEO, SEM (Google Ads), Social Media (Facebook, Instagram, LinkedIn), Email Marketing, and Influencer Collaborations. A balanced multi-channel approach ensures a wider reach and more meaningful customer engagement.`,
+          img: img34,
+        },
+        {
+          title: 'Tracking, Analytics, and Reporting',
+          subtitle: 'Measuring Performance and ROI in Real-Time',
+          desc: `Performance is tracked using tools like Google Analytics, Facebook Insights, and SEO tools. Metrics such as traffic, click-through rates (CTR), conversions, bounce rates, and ROI are analyzed. Regular reporting helps in understanding what’s working and what needs improvement, allowing for data-driven decision-making.`,
+          img: img35,
+        },
+        {
+          title: 'Optimization and Continuous Improvement',
+          subtitle: 'Refining Strategy Based on Insights',
+          desc: `Digital marketing is an ongoing process. Based on analytics and customer feedback, campaigns are tweaked and optimized to enhance performance.`,
+          img: img36,
+        },
+    ],
+    OurApproach: [
+      {
+        heading: "Benefits of Bharatdigital for Digital Marketing & Solutions Development Services",
+        rightImage: rightImg,
       },
     ],
   },

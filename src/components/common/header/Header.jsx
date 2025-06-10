@@ -27,11 +27,11 @@ const services = [
   { icon: dd5, title: "Digital Marketing & Solution", path: "digital-marketing" },
   { icon: dd6, title: "Business Consultant", path: "business-page" },
   { icon: dd7, title: "ERP/CRM Development", path: "erp-development" },
-  { icon: dd8, title: "Chatbot Development", path: "chatbot-page" },
+  { icon: dd8, title: "Chatbot Development", path: "chatbot-development" },
   { icon: dd9, title: "Game Development", path: "game-development" },
   { icon: dd10, title: "Web Security", path: "web-security" },
   { icon: dd11, title: "Digital Card", path: "digital-card" }, 
-  { icon: dd12, title: "Ai/ML", path: "ai-development" },
+  { icon: dd12, title: "Ai/ML", path: "ai-ml" },
 ];
 
 const teamItems = [
@@ -63,18 +63,15 @@ const Header = () => {
             <Link href="/" className="text-[21px] hover:text-[#4F6BF0]">Home</Link>
             <Link href="/about" className="text-[21px] hover:text-[#4F6BF0]">About Us</Link>
 
-            {/* Services Dropdown */}
-            <Link href="/services">
+            {/* Services Dropdown - Fixed */}
             <div
               className="relative"
               onMouseEnter={() => setDropdownOpen(true)}
               onMouseLeave={() => setDropdownOpen(false)}
             >
-              
               <span className="flex items-center gap-1 text-[21px] cursor-pointer hover:text-[#4F6BF0]">
                 Services <ChevronDown size={18} />
               </span>
-              
 
               {dropdownOpen && (
                 <div className="absolute top-4 left-0 mt-4 w-[600px] bg-white text-black rounded-lg shadow-xl p-6 grid grid-cols-2 gap-4 z-50">
@@ -91,7 +88,6 @@ const Header = () => {
                 </div>
               )}
             </div>
-            </Link>
 
             <Link href="/portfolio" className="text-[21px] hover:text-[#4F6BF0]">Portfolio</Link>
             <Link href="/team" className="text-[21px] hover:text-[#4F6BF0]">Team</Link>
