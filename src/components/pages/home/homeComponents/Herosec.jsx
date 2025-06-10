@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState, useEffect } from "react";
 import bg1 from "@/components/assets/Background.png";
 import bg2 from "@/components/assets/Background2.png";
@@ -8,18 +8,18 @@ const slides = [
   {
     background: bg1.src,
     title: "Smart Digital\nBusiness For\nSolutions",
-    text: "We specialize in a comprehensive range of services, including branding, digital marketing, content creation, and web design, all to meet the needs of each client."
+    text: "We specialize in a comprehensive range of services, including branding, digital marketing, content creation, and web design, all to meet the needs of each client.",
   },
   {
     background: bg2.src,
     title: "Bharat Digital\nEnhances Business\nEfficiency and Growth",
-    text: "We specialize in a comprehensive range of services, including branding, digital marketing, content creation, and web design, all to meet the needs of each client."
+    text: "We specialize in a comprehensive range of services, including branding, digital marketing, content creation, and web design, all to meet the needs of each client.",
   },
   {
     background: bg3.src,
     title: "Smart Digital\nBusiness For\nSolutions",
-    text: "We specialize in a comprehensive range of services, including branding, digital marketing, content creation, and web design, all to meet the needs of each client."
-  }
+    text: "We specialize in a comprehensive range of services, including branding, digital marketing, content creation, and web design, all to meet the needs of each client.",
+  },
 ];
 
 const Herosec = () => {
@@ -34,7 +34,6 @@ const Herosec = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-    
       <div
         className="flex transition-transform duration-700 ease-in-out"
         style={{
@@ -52,9 +51,13 @@ const Herosec = () => {
           >
             <div className="flex justify-between items-center w-full">
               <div>
-                <h1 className="whitespace-pre-line text-[80px] font-bold w-[826px] text-[#FEFEFE] uppercase leading-[95px]">
+                <h1
+                  className="whitespace-pre-line text-[80px] font-bold w-[826px] uppercase leading-[95px]
+             bg-gradient-to-b from-white to-zinc-500 bg-clip-text text-transparent"
+                >
                   {slide.title}
                 </h1>
+
                 <p className="mt-6 w-[790px] text-[24px] text-[#F9F9F9]">
                   {slide.text}
                 </p>

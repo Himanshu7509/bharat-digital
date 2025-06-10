@@ -8,11 +8,9 @@ import Footer from '@/components/common/footer/Footer'
 const Services = () => {
   return (
     <div>
-      <Header/>
       <HeroSecServices/>
       <ServicesCard/>
       <FreeTrail/>
-      <Footer/>
     </div>
   )
 }

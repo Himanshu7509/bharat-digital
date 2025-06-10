@@ -1,4 +1,4 @@
-import Header from '@/components/common/header/Header'
+
 import React from 'react'
 import Herosec from './homeComponents/Herosec'
 import WhoWeAre from './homeComponents/WhoWeAre'
@@ -11,12 +11,10 @@ import OurClient from './homeComponents/OurClient'
 import OurLatestArticle from './homeComponents/OurLatestArticle'
 import FreeTrail from '../../common/freeTrialBanner/FreeTrail'
 import GetInTouch from './homeComponents/GetInTouch'
-import Footer from '@/components/common/footer/Footer'
 
 const Home = () => {
   return (
     <>
-    <Header/>
     <Herosec/>
     <WhoWeAre/>
     <MarqueeBanner/>
@@ -28,7 +26,6 @@ const Home = () => {
     <OurLatestArticle/>
     <FreeTrail/>
     <GetInTouch/>
-    <Footer/>
     </>
   )
 }

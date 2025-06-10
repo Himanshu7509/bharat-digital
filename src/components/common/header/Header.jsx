@@ -19,20 +19,19 @@ import dd10 from "@/components/assets/security.png";
 import dd11 from "@/components/assets/card.png";
 import dd12 from "@/components/assets/ai.png";
 
-// Corrected service routes
 const services = [
-  { icon: dd1, title: "App Development", path: "appdevelopment" },
-  { icon: dd2, title: "Website Development", path: "webdevelopment" },
-  { icon: dd3, title: "Software Development", path: "softwaredevelopment" },
-  { icon: dd4, title: "UI/UX Design", path: "uidesign" },
-  { icon: dd5, title: "Digital Marketing & Solution", path: "digitalmarketing" },
-  { icon: dd6, title: "Business Consultant", path: "businesspage" },
-  { icon: dd7, title: "ERP/CRM Development", path: "erpdevelopment" },
-  { icon: dd8, title: "Chatbot Development", path: "chatbotpage" },
-  { icon: dd9, title: "Software Development", path: "softwaredevelopment" },
-  { icon: dd10, title: "Web Security", path: "websecurity" },
-  { icon: dd11, title: "Digital Card", path: "digitalcard" }, 
-  { icon: dd12, title: "Ai/ML", path: "aidevelopment" },
+  { icon: dd1, title: "App Development", path: "app-development" },
+  { icon: dd2, title: "Website Development", path: "web-development" },
+  { icon: dd3, title: "Software Development", path: "software-development" },
+  { icon: dd4, title: "UI/UX Design", path: "ui-design" },
+  { icon: dd5, title: "Digital Marketing & Solution", path: "digital-marketing" },
+  { icon: dd6, title: "Business Consultant", path: "business-page" },
+  { icon: dd7, title: "ERP/CRM Development", path: "erp-development" },
+  { icon: dd8, title: "Chatbot Development", path: "chatbot-page" },
+  { icon: dd9, title: "Game Development", path: "game-development" },
+  { icon: dd10, title: "Web Security", path: "web-security" },
+  { icon: dd11, title: "Digital Card", path: "digital-card" }, 
+  { icon: dd12, title: "Ai/ML", path: "ai-development" },
 ];
 
 const teamItems = [

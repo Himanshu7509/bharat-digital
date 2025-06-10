@@ -1,5 +1,7 @@
 import { Oswald } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/common/header/Header";
+import Footer from "@/components/common/footer/Footer";
 
 // Load Oswald font
 const oswald = Oswald({
@@ -16,7 +18,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${oswald.variable} antialiased`}>
+        <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

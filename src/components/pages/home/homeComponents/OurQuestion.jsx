@@ -5,6 +5,7 @@ import bannerimg from "@/components/assets/question.png";
 import { Plus, X } from "lucide-react";
 import arrow from "@/components/assets/Vector.png";
 import phone from "@/components/assets/phone.png"
+import Link from "next/link";
 
 const faqData = [
   {
@@ -96,9 +97,11 @@ const OurQuestion = () => {
             </div>
           </div>
         ))}
+        <Link href='/faq'>
         <button className="mt-6 bg-gradient-to-r from-[#4F6BF0] to-[#25BAC3] text-white px-6 py-3 uppercase rounded-sm font-semibold text-[25px]">
             See All Questions
           </button>
+        </Link>
       </div>
     </div>
   );
