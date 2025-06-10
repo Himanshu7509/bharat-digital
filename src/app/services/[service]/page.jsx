@@ -7,8 +7,8 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }) {
-  const { service } = params;
+export async function generateMetadata({ params }) {
+  const { service } = await params;
   const content = servicesData[service];
   
   if (!content) {
@@ -23,8 +23,8 @@ export function generateMetadata({ params }) {
   };
 }
 
-const ServicePage = ({ params }) => {
-  const { service } = params;
+const ServicePage = async ({ params }) => {
+  const { service } = await params;
   
   const content = servicesData[service];
 

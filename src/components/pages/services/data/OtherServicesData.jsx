@@ -10,12 +10,16 @@ import img6 from "@/components/assets/p6.png";
 import img7 from "@/components/assets/p7.png";
 import img8 from "@/components/assets/p8.png";
 import img9 from "@/components/assets/p9.png";
+import UiImage from '@/components/assets/uiHero.png'
+import img15 from "@/components/assets/p15.png";
+import img16 from "@/components/assets/p16.png";
 import SoftImage from '@/components/assets/softHero.png'
 import img17 from "@/components/assets/p17.png";
 import img18 from "@/components/assets/p18.png";
 import img19 from "@/components/assets/p19.png";
 import img20 from "@/components/assets/p20.png";
 import img21 from "@/components/assets/p21.png";
+import rightImg3 from '@/components/assets/ap3.png';
 
 
 
@@ -120,6 +124,56 @@ const servicesData = {
     ],
   },
 
+  "ui-design": {
+    HeroBanner: [
+      {
+        title: "UI/UX Design",
+        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
+        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+        bannerImage: UiImage,
+        gradientColor: ["#00020C", "#273B97"]
+      },
+    ],
+    OurProcess: [
+      {
+          title: 'Research and Discovery',
+          subtitle: 'Understanding Users and Business Goals',
+          desc: `The first step in UI/UX design is to gather information about the target users, their needs, behaviors, and pain points. This involves user interviews, surveys, market research, and competitive analysis. The goal is to align the design with both user expectations and business objectives, forming a solid foundation for the rest of the process.`,
+          img: img17,
+        },
+        {
+          title: 'Design (UI/UX)',
+          subtitle: 'Refine your core product value',
+          desc: `Once research is complete, designers organize the app or website content in a way that is logical and easy to navigate. This is done through Information Architecture (IA), which defines the flow and structure. Wireframes—basic visual guides—are then created to outline the layout of each screen without detailed design elements.`,
+          img: img18,
+        },
+        {
+          title: 'Prototyping and Interaction Design',
+          subtitle: 'Bringing the Experience to Life',
+          desc: `Prototypes are interactive models of the final product that simulate user interaction. These help designers and stakeholders visualize how the app or website will function. Interaction design focuses on user flows, animations, transitions, and micro-interactions, ensuring a smooth and engaging experience.`,
+          img: img15,
+        },
+        {
+          title: 'Visual Design',
+          subtitle: 'Creating an Appealing and Consistent Look',
+          desc: `In this stage, designers develop the final look and feel of the product, including typography, color schemes, iconography, and imagery. A design system or style guide is often created for consistency. The visual design not only enhances aesthetic appeal but also strengthens brand identity and user trust.`,
+          img: img16,
+        },
+        {
+          title: 'Launch & Maintenance',
+          subtitle: 'Evolve to drive breakout success',
+          desc: `Post-launch, we analyze customer feedback to uncover high-impact improvements grounded in real user experiences. Simultaneously, we refine workflows and deploy fast-follow features through a dynamic feedback loop that quickly adapts to evolving user needs. This agile, results-driven approach drives swift, continuous innovation and positions your product for lasting market success.`,
+          img: img21,
+        },
+    ],
+    OurApproach: [
+      {
+        heading: "Benefits of Bharatdigital for App Development Services",
+        rightImage: rightImg3,
+      },
+    ],
+  },
+
   "software-development": {
     HeroBanner: [
       {
@@ -127,48 +181,50 @@ const servicesData = {
         para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
         para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
         bannerImage: SoftImage,
-        gradientColor: ["#4F6BF0", "#25BAC3"]
+        gradientColor: ["#010220", "black"]
       },
     ],
     OurProcess: [
       {
-          title: 'Planning and Research',
-          subtitle: 'Defining Goals and Understanding User Needs',
-          desc: `This stage involves conducting market research, analyzing competitors, and identifying user expectations. A well-structured plan acts as a roadmap that ensures the app meets business objectives and user demands.`,
+          title: 'Requirement Analysis',
+          subtitle: 'Understanding the Needs and Goals',
+          desc: `The development process begins with gathering and analyzing the software requirements from stakeholders, clients, or end-users. This phase involves meetings, documentation reviews, and feasibility studies to ensure clarity on what the software must do. A Software Requirements Specification (SRS) document is often created to outline functional and non-functional requirements.`,
           img: img17,
         },
         {
-          title: 'Designing the User Interface',
-          subtitle: 'Creating an Intuitive and Attractive Design',
-          desc: `Once the plan is set, the next step is designing how the app will look and function. UX focuses on the user's journey and ease of navigation, while UI ensures a visually appealing interface. Wireframes, mockups, and prototypes are created to visualize the app.`,
+          title: 'System Design',
+          subtitle: 'Planning the Architecture and Interface',
+          desc: `Once the requirements are clear, the next step is designing the software's architecture. This includes defining the system's overall structure, selecting technologies, creating data flow diagrams, and designing UI/UX elements. Design documentation and wireframes are prepared to guide the development team and ensure the software is structured, scalable, and maintainable.`,
           img: img18,
         },
         {
-          title: 'App Development',
-          subtitle: 'Writing Code and Building the App',
-          desc: `This is the core phase where developers start writing the code based on the approved design. It usually involves two main parts: front-end development (what users see) and back-end development (server-side logic and databases).`,
+          title: 'Implementation (Coding)',
+          subtitle: 'Turning Design into Functional Code',
+          desc: `In this phase, developers begin writing code based on the design documents. The software is usually developed in modules or components using suitable programming languages and tools. Developers may follow coding standards, version control practices, and agile or waterfall methodologies, depending on the project requirements.`,
           img: img19,
         },
         {
           title: 'Testing and Quality Assurance',
-          subtitle: 'Identifying Bugs and Improving Performance',
-          desc: `Before launching, thorough testing is conducted to find and fix any bugs, glitches, or usability issues. Testing can be manual or automated and covers different aspects like functionality, performance, security, and user interface.`,
+          subtitle: 'Ensuring Performance, Functionality, and Security',
+          desc: `After development, the software undergoes rigorous testing to detect bugs, errors, and performance issues. Different types of testing—such as unit testing, integration testing, system testing, and user acceptance testing (UAT)—are conducted to ensure the software meets expectations and performs reliably across different scenarios.`,
           img: img20,
         },
         {
           title: 'Deployment and Maintenance',
-          subtitle: 'Launching the App and Providing Ongoing Support',
-          desc: `Once the app is tested and approved, it is released to app stores like Google Play or Apple App Store. But the process doesn’t end there—maintenance is crucial. Regular updates, performance monitoring, and user feedback help in improving the app and keeping it relevant over time.`,
+          subtitle: 'Launching and Continuously Improving the Software',
+          desc: `Once the software passes all tests, it is deployed to production environments where end-users can access it. However, the process doesn’t end here—ongoing maintenance is essential to fix bugs, update features, and improve performance over time.`,
           img: img21,
         },
     ],
     OurApproach: [
       {
-        heading: "Benefits of Bharatdigital for App Development Services",
-        rightImage: rightImg,
+        heading: "Benefits of Bharatdigital for Software Development Services",
+        rightImage: rightImg3,
       },
     ],
   },
+
+  
 };
 
 export default servicesData
