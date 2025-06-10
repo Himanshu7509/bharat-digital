@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, ArrowUpRight, Menu, X, ChevronRight } from "lucide-react";
 
-// Logo and service icons
 import BD from "@/components/assets/bd.png";
 import dd1 from "@/components/assets/appdev.png";
 import dd2 from "@/components/assets/webdevl.png";
@@ -25,7 +24,7 @@ const services = [
   { icon: dd3, title: "Software Development", path: "software-development" },
   { icon: dd4, title: "UI/UX Design", path: "ui-design" },
   { icon: dd5, title: "Digital Marketing & Solution", path: "digital-marketing" },
-  { icon: dd6, title: "Business Consultant", path: "business-page" },
+  { icon: dd6, title: "Business Consultant", path: "business-consultant" },
   { icon: dd7, title: "ERP/CRM Development", path: "erp-development" },
   { icon: dd8, title: "Chatbot Development", path: "chatbot-development" },
   { icon: dd9, title: "Game Development", path: "game-development" },
@@ -58,12 +57,10 @@ const Header = () => {
         <div className="flex items-center justify-between px-4 md:px-8 py-4">
           <Image src={BD} alt="Logo" className="w-[132px] h-[66px]" />
 
-          {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-10 text-white font-medium relative">
             <Link href="/" className="text-[21px] hover:text-[#4F6BF0]">Home</Link>
             <Link href="/about" className="text-[21px] hover:text-[#4F6BF0]">About Us</Link>
 
-            {/* Services Dropdown - Fixed */}
             <div
               className="relative"
               onMouseEnter={() => setDropdownOpen(true)}

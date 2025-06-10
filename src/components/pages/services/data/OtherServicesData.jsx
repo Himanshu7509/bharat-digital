@@ -48,6 +48,20 @@ import img33 from "@/components/assets/p33.png";
 import img34 from "@/components/assets/p34.png";
 import img35 from "@/components/assets/p35.png";
 import img36 from "@/components/assets/p36.png";
+import erpImage from '@/components/assets/erpHero.png'
+import img37 from "@/components/assets/p37.png";
+import img38 from "@/components/assets/p38.png";
+import img39 from "@/components/assets/p39.png";
+import img40 from "@/components/assets/p40.png";
+import img41 from "@/components/assets/p41.png";
+import securityImage from '@/components/assets/securityHero.png'
+import img42 from "@/components/assets/p42.png";
+import businessImage from '@/components/assets/businessHero.png'
+import cardImage from '@/components/assets/cardHero.png'
+import img43 from "@/components/assets/p43.png";
+import img44 from "@/components/assets/p44.png";
+import img45 from "@/components/assets/p45.png";
+import img46 from "@/components/assets/p46.png";
 
 
 
@@ -447,6 +461,206 @@ const servicesData = {
     OurApproach: [
       {
         heading: "Benefits of Bharatdigital for Digital Marketing & Solutions Development Services",
+        rightImage: rightImg,
+      },
+    ],
+  },
+
+   "erp-development": {
+    HeroBanner: [
+      {
+        title: "EPR/CRM Development",
+        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
+        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+        bannerImage: erpImage,
+        gradientColor: ["#010220", "#010220"]
+      },
+    ],
+    OurProcess: [
+      {
+          title: 'Analysis and Process Mapping',
+          subtitle: 'Business Workflows and User Needs',
+          desc: `The first step in ERP/CRM development is to thoroughly understand the client's business operations, departments, and workflows. This involves gathering specific requirements, identifying pain points in current systems (if any), and determining what features are essential.`,
+          img: img37,
+        },
+        {
+          title: 'Design and Architecture Planning',
+          subtitle: 'Structuring the Platform for Flexibility',
+          desc: `We begin with your product vision and brand principles, exploring diverse concepts and honing them into a polished, high-fidelity design. Our process emphasizes flexibility and scalability, leveraging modular components to seamlessly support future updates and features. At each stage, we focus on delivering intuitive, delightful experiences that make your product exceptional.`,
+          img: img38,
+        },
+        {
+          title: 'Development and Module Integration',
+          subtitle: 'Building Core Features and Connecting',
+          desc: `The build phase kicks off with a comprehensive project plan, mapping out user flows and engineering tasks in detail. We accelerate development through strategic decisions on architecture, leveraging existing APIs, and adopting efficient design systems to minimize build time and ensure scalability. As build completion approaches.`,
+          img: img39,
+        },
+        {
+          title: 'Testing and User Acceptance',
+          subtitle: 'Ensuring Accuracy, Security, and Performance',
+          desc: `After development, the system goes through rigorous testing, including functionality testing, security testing, and load testing. The goal is to ensure the ERP/CRM works accurately across all modules, handles sensitive business data securely, and performs under real usage conditions.`,
+          img: img40,
+        },
+        {
+          title: 'Deployment, Training, and Maintenance',
+          subtitle: 'Launching the System and Empowering',
+          desc: `Once testing is complete and final adjustments are made, the ERP/CRM system is deployed on cloud or on-premise servers. At this point, training sessions are provided to staff and admins to ensure smooth adoption. Continuous support and maintenance are essential to update features, fix bugs, and scale with business needs.`,
+          img: img41,
+        },
+    ],
+    OurApproach: [
+      {
+        heading: "Benefits of Bharatdigital for EPR/CRM Development Services",
+        rightImage: rightImg,
+      },
+    ],
+  },
+
+   "web-security": {
+    HeroBanner: [
+      {
+        title: "Web Security",
+        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
+        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+        bannerImage: securityImage,
+        gradientColor: ["#010220", "#010220"]
+      },
+    ],
+    OurProcess: [
+      {
+          title: 'Risk Assessment',
+          subtitle: 'Identifying Threats and Vulnerabilities',
+          desc: `The first step is analyzing the system to find potential security threats and weaknesses. This helps prioritize which areas need protection and sets the foundation for a secure design.`,
+          img: img42,
+        },
+        {
+          title: 'Secure Code Development',
+          subtitle: 'Writing Safe and Error-Free Code',
+          desc: `Developers follow secure coding practices to prevent issues like SQL injection, XSS, and CSRF. Regular code reviews and static analysis tools are used to catch vulnerabilities early.`,
+          img: img42,
+        },
+        {
+          title: 'Authentication and Access Control',
+          subtitle: 'Managing User Identity and Permissions',
+          desc: `Implementing strong authentication (like two-factor) and role-based access ensures that users only access what they’re allowed to. This limits damage in case of a breach.`,
+          img: img42,
+        },
+        {
+          title: 'Data Encryption',
+          subtitle: 'Protecting Data in Transit and Storage',
+          desc: `Sensitive data is encrypted using HTTPS (SSL/TLS) for transmission and securely stored using encryption algorithms. This protects information even if it’s intercepted or accessed illegally.`,
+          img: img42,
+        },
+        {
+          title: 'Regular Testing and Updates',
+          subtitle: 'Staying Ahead of Security Threats',
+          desc: `Frequent security testing (like penetration testing) and applying software updates help defend against new vulnerabilities. Continuous monitoring is also key for early threat detection.`,
+          img: img42,
+        },
+    ],
+    OurApproach: [
+      {
+        heading: "Benefits of Bharatdigital for Web Security Services",
+        rightImage: rightImg,
+      },
+    ],
+  },
+
+   "business-consultant": {
+    HeroBanner: [
+      {
+        title: "Business Consultant",
+        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
+        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+        bannerImage: businessImage,
+        gradientColor: ["#1F3498", "#25BAC300"]
+      },
+    ],
+    OurProcess: [
+      {
+          title: 'Initial Consultation',
+          subtitle: "Understanding the Client's Business",
+          desc: `The process begins with a meeting to understand the client’s business, challenges, and goals. This helps the consultant assess where support is needed and how they can add value.`,
+          img: img42,
+        },
+        {
+          title: 'Design (UI/UX)',
+          subtitle: 'Refine your core product value',
+          desc: `We begin with your product vision and brand principles, exploring diverse concepts and honing them into a polished, high-fidelity design. Our process emphasizes flexibility and scalability, leveraging modular components to seamlessly support future updates and features. At each stage, we focus on delivering intuitive, delightful experiences that make your product exceptional.`,
+          img: img42,
+        },
+        {
+          title: 'Development',
+          subtitle: 'Rapidly bring your vision to life',
+          desc: `The build phase kicks off with a comprehensive project plan, mapping out user flows and engineering tasks in detail. We accelerate development through strategic decisions on architecture, leveraging existing APIs, and adopting efficient design systems to minimize build time and ensure scalability. As build completion approaches.`,
+          img: img42,
+        },
+        {
+          title: 'Testing',
+          subtitle: 'Launch with confidence',
+          desc: `As launch day approaches, our team is fully committed to ensuring a seamless and successful rollout. We conduct a rigorous launch-readiness review, encompassing bug bashes, load testing, security assessments, and the deployment of robust real-time monitoring and alert systems. `,
+          img: img42,
+        },
+        {
+          title: 'Launch & Maintenance',
+          subtitle: 'Evolve to drive breakout success',
+          desc: `Post-launch, we analyze customer feedback to uncover high-impact improvements grounded in real user experiences. Simultaneously, we refine workflows and deploy fast-follow features through a dynamic feedback loop that quickly adapts to evolving user needs. This agile, results-driven approach drives swift, continuous innovation and positions your product for lasting market success.`,
+          img: img42,
+        },
+    ],
+    OurApproach: [
+      {
+        heading: "Benefits of Bharatdigital for Business Consultant Services",
+        rightImage: rightImg,
+      },
+    ],
+  },
+
+  "digital-card": {
+    HeroBanner: [
+      {
+        title: "Digital Card",
+        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
+        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+        bannerImage: cardImage,
+        gradientColor: ["#2C5871", "#2C5871"]
+      },
+    ],
+    OurProcess: [
+      {
+          title: 'Planning and Purpose',
+          subtitle: "Defining the Goal of the Card",
+          desc: `Start by identifying the purpose—whether it’s for personal branding, business networking, or event sharing. This helps determine what details and design style the card should have.`,
+          img: img43,
+        },
+        {
+          title: 'Content Collection',
+          subtitle: 'Gathering Essential Information',
+          desc: `Collect all necessary details like name, contact info, social media links, logo, and a brief intro. This content forms the core of your digital card.`,
+          img: img44,
+        },
+        {
+          title: 'Design and Layout',
+          subtitle: 'Creating an Appealing Look',
+          desc: `Choose a layout that is clean and professional. Use branding elements like colors, fonts, and icons to make the card visually attractive and easy to read.`,
+          img: img45,
+        },
+        {
+          title: 'Development and Tools',
+          subtitle: 'Building the Digital Card',
+          desc: `Use tools like Canva, Figma, or digital card platforms to create and host the card. Ensure it is mobile-friendly, clickable, and easily shareable via link or QR code. `,
+          img: img46,
+        },
+        {
+          title: 'Testing and Sharing',
+          subtitle: 'Reviewing and Distributing the Card',
+          desc: `Before sharing, test all links and features. Once verified, distribute the card via email, social media, or QR codes for easy access and networking.`,
+          img: img43,
+        },
+    ],
+    OurApproach: [
+      {
+        heading: "Benefits of Bharatdigital for Digital Card Services",
         rightImage: rightImg,
       },
     ],
