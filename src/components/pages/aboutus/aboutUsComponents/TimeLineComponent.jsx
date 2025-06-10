@@ -1,80 +1,317 @@
 "use client"
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Timeline = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeYear, setActiveYear] = useState(2011);
+  const scrollContainerRef = useRef(null);
+  const itemRefs = useRef([]);
+
   const timelineData = [
     {
       date: "January 2011",
+      year: 2011,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
-      date: "January 2012", 
+      date: "February 2012",
+      year: 2012,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
       date: "March 2013",
+      year: 2013,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
-      date: "January 2014",
+      date: "August 2014",
+      year: 2014,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      date: "November 2015",
+      year: 2015,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      date: "December 2016",
+      year: 2016,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      date: "April 2017", 
+      year: 2017,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      date: "May 2018",
+      year: 2018,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      date: "June 2019",
+      year: 2019,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
   ];
 
+  // Get unique years for navigation
+  const uniqueYears = [...new Set(timelineData.map(item => item.year))].sort();
+
+  // Handle scroll to update active index and year
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!scrollContainerRef.current) return;
+
+      const container = scrollContainerRef.current;
+      const containerRect = container.getBoundingClientRect();
+      const containerCenter = containerRect.top + containerRect.height / 2;
+
+      let closestIndex = 0;
+      let minDistance = Infinity;
+
+      itemRefs.current.forEach((ref, index) => {
+        if (ref) {
+          const rect = ref.getBoundingClientRect();
+          const itemCenter = rect.top + rect.height / 2;
+          const distance = Math.abs(itemCenter - containerCenter);
+          
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestIndex = index;
+          }
+        }
+      });
+
+      setActiveIndex(closestIndex);
+      setActiveYear(timelineData[closestIndex].year);
+    };
+
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      // Initial check
+      handleScroll();
+      
+      return () => container.removeEventListener('scroll', handleScroll);
+    }
+  }, [timelineData]);
+
+  // Calculate progress based on scroll position (0 to 1)
+  const getScrollProgress = () => {
+    if (!scrollContainerRef.current) return 0;
+    
+    const container = scrollContainerRef.current;
+    const scrollTop = container.scrollTop;
+    const scrollHeight = container.scrollHeight - container.clientHeight;
+    
+    if (scrollHeight === 0) return 0;
+    return Math.min(Math.max(scrollTop / scrollHeight, 0), 1);
+  };
+
+  // Calculate arc path based on scroll progress with smoother animation
+  const getArcPath = () => {
+    const progress = getScrollProgress();
+    const angle = progress * 270; // Reduced to 270 degrees for better visual
+    const radians = (angle - 90) * (Math.PI / 180);
+    
+    const centerX = 116;
+    const centerY = 116;
+    const radius = 108;
+    
+    const endX = centerX + radius * Math.cos(radians);
+    const endY = centerY + radius * Math.sin(radians);
+    
+    const largeArcFlag = angle > 180 ? 1 : 0;
+    
+    return `M ${centerX} ${centerY - radius} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${endX} ${endY}`;
+  };
+
+  // Get previous and next years for display with proper logic
+  const getPrevYear = () => {
+    const currentIndex = timelineData.findIndex(item => item.year === activeYear);
+    if (currentIndex > 0) {
+      return timelineData[currentIndex - 1].year;
+    }
+    return null;
+  };
+
+  const getNextYear = () => {
+    const currentIndex = timelineData.findIndex(item => item.year === activeYear);
+    if (currentIndex < timelineData.length - 1) {
+      return timelineData[currentIndex + 1].year;
+    }
+    return null;
+  };
+
+  // Calculate line progress based on scroll
+  const getLineProgress = () => {
+    const scrollProgress = getScrollProgress();
+    const totalLines = 11;
+    return Math.round(scrollProgress * (totalLines - 1));
+  };
+
   return (
-    <div className="bg-gray-50 min-h-screen p-8">
+    <div className="bg-gray-50 min-h-screen p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-start gap-20">
+        <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12 xl:gap-20">
           {/* Left side - Title and Timeline Visual */}
-          <div className="flex-1 max-w-lg">
-            <div className="mb-12">
-              <h1 className="text-5xl font-bold text-gray-800 mb-2 leading-tight">Timeline</h1>
-              <h2 className="text-5xl font-bold text-blue-500 leading-tight">Our History</h2>
+          <div className="flex-1 max-w-lg mx-auto lg:mx-0">
+            <div className="mb-8 lg:mb-12 text-center lg:text-left">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-2 leading-tight">Timeline</h1>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-500 leading-tight">Our History</h2>
             </div>
             
             {/* Timeline Visual */}
-            <div className="relative mt-16 flex items-center">
-              {/* Horizontal lines */}
-              <div className="flex flex-col gap-2 mr-8">
-                <div className="w-20 h-1 bg-black"></div>
-                <div className="w-20 h-1 bg-black"></div>
-                <div className="w-20 h-1 bg-black"></div>
-                <div className="w-20 h-1 bg-black"></div>
-                <div className="w-20 h-1 bg-black"></div>
-                <div className="w-20 h-1 bg-blue-400"></div>
-                <div className="w-20 h-1 bg-black"></div>
-                <div className="w-20 h-1 bg-black"></div>
-                <div className="w-20 h-1 bg-black"></div>
-                <div className="w-20 h-1 bg-black"></div>
-                <div className="w-20 h-1 bg-black"></div>
+            <div className="relative mt-8 lg:mt-16 flex items-center justify-center lg:justify-start">
+              {/* Horizontal lines with smooth progressive coloring - hide on mobile */}
+              <div className="hidden lg:flex flex-col gap-2 mr-8">
+                {[...Array(11)].map((_, i) => {
+                  const activeLinePosition = getLineProgress();
+                  const isColored = i <= activeLinePosition;
+                  
+                  return (
+                    <motion.div 
+                      key={i}
+                      className="w-16 xl:w-20 h-1"
+                      animate={{
+                        backgroundColor: isColored ? '#60A5FA' : '#D1D5DB'
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        ease: [0.25, 0.46, 0.45, 0.94]
+                      }}
+                    />
+                  );
+                })}
               </div>
               
               {/* Circle with years */}
               <div className="relative">
-                <div className="w-56 h-56 border-4 border-black rounded-full relative bg-white flex items-center justify-center">
-                  {/* Center year - 2012 */}
-                  <div className="text-6xl font-bold text-black">
-                    2012
+                <div className="w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 border-3 sm:border-4 border-black rounded-full relative bg-white flex items-center justify-center overflow-visible">
+                  {/* Center year - Active year with ultra smooth transition */}
+                  <div className="relative">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={activeYear}
+                        initial={{ 
+                          opacity: 0, 
+                          scale: 0.8,
+                          y: 20,
+                          filter: "blur(8px)"
+                        }}
+                        animate={{ 
+                          opacity: 1, 
+                          scale: 1,
+                          y: 0,
+                          filter: "blur(0px)"
+                        }}
+                        exit={{ 
+                          opacity: 0, 
+                          scale: 0.8,
+                          y: -20,
+                          filter: "blur(8px)"
+                        }}
+                        transition={{
+                          duration: 0.8,
+                          ease: [0.25, 0.46, 0.45, 0.94],
+                          scale: {
+                            type: "spring",
+                            stiffness: 100,
+                            damping: 15
+                          }
+                        }}
+                        className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black"
+                      >
+                        {activeYear}
+                      </motion.div>
+                    </AnimatePresence>
                   </div>
                   
-                  {/* Years positioned around the circle */}
-                  <div className="absolute -top-8 left transform -translate-x-1/2 text-gray-400 text-4xl font-bold">
-                    2011
+                  {/* Previous year - top with better positioning */}
+                  <div className="absolute -top-12 sm:-top-14 lg:-top-16 left-1/2 transform -translate-x-1/2">
+                    <AnimatePresence mode="wait">
+                      {getPrevYear() && (
+                        <motion.div
+                          key={`prev-${getPrevYear()}`}
+                          initial={{ 
+                            opacity: 0, 
+                            y: 20,
+                            scale: 0.7
+                          }}
+                          animate={{ 
+                            opacity: 0.6, 
+                            y: 0,
+                            scale: 1
+                          }}
+                          exit={{ 
+                            opacity: 0, 
+                            y: -20,
+                            scale: 0.7
+                          }}
+                          transition={{ 
+                            duration: 0.6, 
+                            ease: [0.25, 0.46, 0.45, 0.94]
+                          }}
+                          className="text-gray-400 text-xl sm:text-2xl lg:text-3xl font-bold"
+                        >
+                          {getPrevYear()}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                   
-                  <div className="absolute -bottom-8 left transform -translate-x-1/2 text-gray-400 text-4xl font-bold">
-                    2013
+                  {/* Next year - bottom with better positioning */}
+                  <div className="absolute -bottom-12 sm:-bottom-14 lg:-bottom-16 left-1/2 transform -translate-x-1/2">
+                    <AnimatePresence mode="wait">
+                      {getNextYear() && (
+                        <motion.div
+                          key={`next-${getNextYear()}`}
+                          initial={{ 
+                            opacity: 0, 
+                            y: -20,
+                            scale: 0.7
+                          }}
+                          animate={{ 
+                            opacity: 0.6, 
+                            y: 0,
+                            scale: 1
+                          }}
+                          exit={{ 
+                            opacity: 0, 
+                            y: 20,
+                            scale: 0.7
+                          }}
+                          transition={{ 
+                            duration: 0.6, 
+                            ease: [0.25, 0.46, 0.45, 0.94]
+                          }}
+                          className="text-gray-400 text-xl sm:text-2xl lg:text-3xl font-bold"
+                        >
+                          {getNextYear()}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                   
-                  {/* Blue arc - top right quadrant */}  
+                  {/* Blue arc - progress based with smooth animation */}  
                   <div className="absolute -inset-1">
                     <svg className="w-full h-full" viewBox="0 0 232 232">
-                      <path
-                        d="M 116 8 A 108 108 0 0 1 224 116"
+                      <motion.path
+                        d={getArcPath()}
                         fill="none"
                         stroke="#60A5FA"
                         strokeWidth="6"
+                        strokeLinecap="round"
+                        animate={{ 
+                          d: getArcPath()
+                        }}
+                        transition={{
+                          duration: 0.6,
+                          ease: [0.25, 0.46, 0.45, 0.94]
+                        }}
                       />
                     </svg>
                   </div>
@@ -84,21 +321,71 @@ const Timeline = () => {
           </div>
           
           {/* Right side - Timeline Content */}
-          <div className="flex-1 max-w-lg pt-4">
-            <div className="space-y-10">
+          <div className="flex-1 max-w-lg mx-auto lg:mx-0 pt-4">
+            <div 
+              ref={scrollContainerRef}
+              className="space-y-6 sm:space-y-8 lg:space-y-10 max-h-80 sm:max-h-96 lg:max-h-96 overflow-y-auto pr-2 sm:pr-4 scroll-smooth"
+              style={{ 
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none'
+              }}
+            >
+              <style jsx>{`
+                div::-webkit-scrollbar {
+                  display: none;
+                }
+              `}</style>
               {timelineData.map((item, index) => (
-                <div key={index} className="pb-4">
-                  <h3 className="text-2xl font-bold text-blue-400 mb-4">
+                <motion.div 
+                  key={index} 
+                  ref={el => itemRefs.current[index] = el}
+                  className="pb-4"
+                  animate={{
+                    opacity: index === activeIndex ? 1 : 0.5,
+                    scale: index === activeIndex ? 1.02 : 1,
+                    x: index === activeIndex ? 8 : 0
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    ease: [0.25, 0.46, 0.45, 0.94]
+                  }}
+                >
+                  <motion.h3 
+                    className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4"
+                    animate={{
+                      color: index === activeIndex ? '#3B82F6' : '#9CA3AF'
+                    }}
+                    transition={{ 
+                      duration: 0.5,
+                      ease: [0.25, 0.46, 0.45, 0.94]
+                    }}
+                  >
                     {item.date}
-                  </h3>
-                  <p className="text-gray-600 text-base leading-relaxed">
+                  </motion.h3>
+                  <p className={`text-sm sm:text-base leading-relaxed transition-colors duration-500 ${
+                    index === activeIndex ? 'text-gray-700' : 'text-gray-500'
+                  }`}>
                     {item.description}
                   </p>
                   {index < timelineData.length - 1 && (
-                    <div className="mt-8 w-full h-px bg-gray-300"></div>
+                    <motion.div 
+                      className="mt-6 sm:mt-8 w-full h-px"
+                      animate={{
+                        backgroundColor: index < activeIndex ? '#60A5FA' : '#E5E7EB'
+                      }}
+                      transition={{ 
+                        duration: 0.5,
+                        ease: [0.25, 0.46, 0.45, 0.94]
+                      }}
+                    />
                   )}
-                </div>
+                </motion.div>
               ))}
+            </div>
+            
+            {/* Scroll indicator */}
+            <div className="mt-4 text-center lg:text-left text-gray-400 text-xs sm:text-sm">
+              Scroll to explore timeline
             </div>
           </div>
         </div>

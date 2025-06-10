@@ -11,7 +11,7 @@ const VisionMission = () => {
             <span className="text-blue-500 text-lg font-medium mr-4">
               Vision & Mission
             </span>
-            <div className="h-0.5 bg-blue-500 flex-1 max-w-20"></div>
+            <div className="h-0.5 bg-[#4F6BF0] flex-1 max-w-20"></div>
           </div>
           
           {/* Main Content */}
