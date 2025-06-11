@@ -7,18 +7,18 @@ import bg3 from "@/components/assets/Background3.png";
 const slides = [
   {
     background: bg1.src,
-    title: "Smart Digital\nBusiness For\nSolutions",
-    text: "We specialize in a comprehensive range of services, including branding, digital marketing, content creation, and web design, all to meet the needs of each client.",
+    title: "SMART DIGITAL\nBUSINESS FOR\nSOLUTIONS",
+    text: "We specialize in a comprehensive range services, including branding, digital marketing, content creation, and web design, all to meet the needs of each client.",
   },
   {
     background: bg2.src,
-    title: "Bharat Digital\nEnhances Business\nEfficiency and Growth",
-    text: "We specialize in a comprehensive range of services, including branding, digital marketing, content creation, and web design, all to meet the needs of each client.",
+    title: "BHARAT DIGITAL\nENHANCES BUSINESS\nEFFICIENCY AND GROWTH",
+    text: "We specialize in a comprehensive range services, including branding, digital marketing, content creation, and web design, all to meet the needs of each client.",
   },
   {
     background: bg3.src,
-    title: "Smart Digital\nBusiness For\nSolutions",
-    text: "We specialize in a comprehensive range of services, including branding, digital marketing, content creation, and web design, all to meet the needs of each client.",
+    title: "SMART DIGITAL\nBUSINESS FOR\nSOLUTIONS",
+    text: "We specialize in a comprehensive range services, including branding, digital marketing, content creation, and web design, all to meet the needs of each client.",
   },
 ];
 
@@ -44,35 +44,34 @@ const Herosec = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="w-screen h-screen bg-cover bg-center flex items-center justify-between px-20"
+            className="w-screen h-screen bg-cover bg-center flex items-center px-4 sm:px-8 md:px-16"
             style={{
               backgroundImage: `url(${slide.background})`,
             }}
           >
             <div className="flex justify-between items-center w-full">
-              <div>
-                <h1
-                  className="whitespace-pre-line text-[80px] font-bold w-[826px] uppercase leading-[95px]
-             bg-gradient-to-b from-white to-zinc-500 bg-clip-text text-transparent"
-                >
+              {/* Left Content */}
+              <div className="w-full md:w-[60%] max-w-[850px]">
+                <h1 className="whitespace-pre-line text-[36px] sm:text-[48px] md:text-[64px] lg:text-[72px] xl:text-[80px] leading-tight font-bold uppercase bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent">
                   {slide.title}
                 </h1>
 
-                <p className="mt-6 w-[790px] text-[24px] text-[#F9F9F9]">
+                <p className="mt-6 text-white text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] max-w-[680px] leading-relaxed">
                   {slide.text}
                 </p>
-                <button className="w-[215px] h-[72px] flex rounded-sm justify-center items-center bg-[#4F6BF0] text-white font-semibold text-[20px] mt-5">
+
+                <button className="mt-6 w-[180px] sm:w-[200px] md:w-[215px] h-[52px] sm:h-[60px] flex justify-center items-center bg-[#4F6BF0] text-white font-semibold text-[16px] sm:text-[18px] rounded-sm">
                   VIEW OUR WORKS
                 </button>
               </div>
 
-              {/* Right-side numbered indicators */}
-              <div className="relative z-10 flex flex-col gap-10 items-center">
+              {/* Numbered Dots */}
+              <div className="hidden md:flex flex-col gap-6 items-center mr-4">
                 {[0, 1, 2].map((i) => (
                   <button
                     key={i}
                     onClick={() => setActiveIndex(i)}
-                    className={`w-[44px] h-[44px] flex items-center justify-center rounded-full text-[20px] transition-all ${
+                    className={`w-[44px] h-[44px] rounded-full flex items-center justify-center text-[18px] transition-all ${
                       activeIndex === i
                         ? "bg-[#284BFF] text-white"
                         : "border border-white text-white"

@@ -1,8 +1,13 @@
 import React from 'react'
+import BlogHeroSec from './blogComponents/BlogHeroSec'
+import BlogCards from './blogComponents/BlogCards'
 
 const Blog = () => {
   return (
-    <div>Blog</div>
+    <div>
+      <BlogHeroSec/>
+      <BlogCards/>
+    </div>
   )
 }
 

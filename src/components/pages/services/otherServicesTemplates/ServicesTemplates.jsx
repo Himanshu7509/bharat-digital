@@ -17,7 +17,7 @@ const ServiceTemplates = ({ data }) => {
           background: `linear-gradient(180deg, ${HeroBanner[0].gradientColor[1]}, ${HeroBanner[0].gradientColor[0]})`,
         }}
       >
-        <div className="text-white max-w-3xl mb-8 md:mb-10 lg:mb-0 text-center lg:text-left">
+        <div className="text-white max-w-3xl mb-8 md:mb-10 lg:mb-0 text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px] font-semibold mb-4 md:mb-6 leading-tight">
             {HeroBanner[0].title}
           </h1>

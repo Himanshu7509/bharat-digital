@@ -17,6 +17,8 @@ import dd9 from "@/components/assets/software.png";
 import dd10 from "@/components/assets/security.png";
 import dd11 from "@/components/assets/card.png";
 import dd12 from "@/components/assets/ai.png";
+import faqIcon from '@/components/assets/faq.png';
+import teamIcon from '@/components/assets/team.png';
 
 const services = [
   { icon: dd1, title: "App Development", path: "app-development" },
@@ -34,20 +36,62 @@ const services = [
 ];
 
 const teamItems = [
-  { title: "Team" },
-  { title: "Faqs" },
+  { icon: teamIcon, title: "Team", path: "team" },
+  { icon: faqIcon, title: "FAQs", path: "faq" },
 ];
 
 const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [teamDropdownOpen, setTeamDropdownOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [teamMenuOpen, setTeamMenuOpen] = useState(false);
+  
+  // Timeout refs for delayed closing
+  const [servicesTimeout, setServicesTimeout] = useState(null);
+  const [teamTimeout, setTeamTimeout] = useState(null);
 
   const closeSidebar = () => {
     setMenuOpen(false);
     setServicesOpen(false);
     setTeamMenuOpen(false);
+  };
+
+  const closeDropdowns = () => {
+    setDropdownOpen(false);
+    setTeamDropdownOpen(false);
+  };
+
+  const handleServicesMouseEnter = () => {
+    if (servicesTimeout) {
+      clearTimeout(servicesTimeout);
+      setServicesTimeout(null);
+    }
+    setDropdownOpen(true);
+    setTeamDropdownOpen(false);
+  };
+
+  const handleServicesMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setDropdownOpen(false);
+    }, 2000);
+    setServicesTimeout(timeout);
+  };
+
+  const handleTeamMouseEnter = () => {
+    if (teamTimeout) {
+      clearTimeout(teamTimeout);
+      setTeamTimeout(null);
+    }
+    setTeamDropdownOpen(true);
+    setDropdownOpen(false);
+  };
+
+  const handleTeamMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setTeamDropdownOpen(false);
+    }, 2000);
+    setTeamTimeout(timeout);
   };
 
   return (
@@ -61,22 +105,31 @@ const Header = () => {
             <Link href="/" className="text-[21px] hover:text-[#4F6BF0]">Home</Link>
             <Link href="/about" className="text-[21px] hover:text-[#4F6BF0]">About Us</Link>
 
+            {/* Services Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
+              onMouseEnter={handleServicesMouseEnter}
+              onMouseLeave={handleServicesMouseLeave}
             >
-              <span className="flex items-center gap-1 text-[21px] cursor-pointer hover:text-[#4F6BF0]">
-                Services <ChevronDown size={18} />
-              </span>
+              <div className="flex items-center gap-1 text-[21px] cursor-pointer hover:text-[#4F6BF0]">
+                <Link href="/services" className="hover:text-[#4F6BF0]">
+                  Services
+                </Link>
+                <ChevronDown size={18} />
+              </div>
 
               {dropdownOpen && (
-                <div className="absolute top-4 left-0 mt-4 w-[600px] bg-white text-black rounded-lg shadow-xl p-6 grid grid-cols-2 gap-4 z-50">
+                <div 
+                  className="absolute top-full left-0 mt-2 w-[600px] bg-white text-black rounded-lg shadow-xl p-6 grid grid-cols-2 gap-4 z-50"
+                  onMouseEnter={handleServicesMouseEnter}
+                  onMouseLeave={handleServicesMouseLeave}
+                >
                   {services.map((service, index) => (
                     <Link
                       key={index}
                       href={`/services/${service.path}`}
-                      className="flex items-center gap-3 hover:bg-gray-100 p-2 rounded-md cursor-pointer"
+                      className="flex items-center gap-3 hover:bg-gray-100 p-2 rounded-md cursor-pointer transition-colors"
+                      onClick={closeDropdowns}
                     >
                       <Image src={service.icon} alt={service.title} width={30} height={30} />
                       <span className="text-[16px] font-semibold">{service.title}</span>
@@ -87,11 +140,43 @@ const Header = () => {
             </div>
 
             <Link href="/portfolio" className="text-[21px] hover:text-[#4F6BF0]">Portfolio</Link>
-            <Link href="/team" className="text-[21px] hover:text-[#4F6BF0]">Team</Link>
+
+            <div
+              className="relative"
+              onMouseEnter={handleTeamMouseEnter}
+              onMouseLeave={handleTeamMouseLeave}
+            >
+              <div className="flex items-center gap-1 text-[21px] cursor-pointer hover:text-[#4F6BF0]">
+                <Link href="/team" className="hover:text-[#4F6BF0]">
+                  Team
+                </Link>
+                <ChevronDown size={18} />
+              </div>
+
+              {teamDropdownOpen && (
+                <div 
+                  className="absolute top-full left-0 mt-2 w-[300px] bg-white text-black rounded-lg shadow-xl p-4 z-50"
+                  onMouseEnter={handleTeamMouseEnter}
+                  onMouseLeave={handleTeamMouseLeave}
+                >
+                  {teamItems.map((item, index) => (
+                    <Link
+                      key={index}
+                      href={`/${item.path}`}
+                      className="flex items-center gap-3 hover:bg-gray-100 p-3 rounded-md cursor-pointer transition-colors"
+                      onClick={closeDropdowns}
+                    >
+                      <Image src={item.icon} alt={item.title} width={30} height={30} />
+                      <span className="text-[16px] font-semibold">{item.title}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <Link href="/blog" className="text-[21px] hover:text-[#4F6BF0]">Blog</Link>
           </div>
 
-          {/* Contact Button */}
           <Link href="/contact">
             <button className="hidden md:flex justify-center items-center gap-2 w-[183px] h-[57px] bg-gradient-to-r from-[#4F6BF0] to-[#25BAC3] hover:opacity-90 text-white text-[21px] font-medium">
               <ArrowUpRight size={21} />
@@ -99,14 +184,12 @@ const Header = () => {
             </button>
           </Link>
 
-          {/* Mobile Menu Button */}
           <button className="md:hidden text-white" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <X size={30} /> : <Menu size={30} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Overlay */}
       {menuOpen && (
         <div 
           className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
@@ -114,7 +197,6 @@ const Header = () => {
         />
       )}
 
-      {/* Mobile Sidebar */}
       <div className={`fixed top-0 left-0 h-full w-80 bg-white z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
         menuOpen ? 'translate-x-0' : '-translate-x-full'
       }`}>
@@ -167,11 +249,12 @@ const Header = () => {
                 {teamItems.map((item, index) => (
                   <Link
                     key={index}
-                    href={`/${item.title.toLowerCase()}`}
+                    href={`/${item.path}`}
                     onClick={closeSidebar}
-                    className="block py-2 text-[16px] text-gray-700 hover:text-[#4F6BF0] hover:bg-gray-100 rounded-md px-2"
+                    className="flex items-center gap-3 py-2 hover:bg-gray-100 rounded-md px-2"
                   >
-                    {item.title}
+                    <Image src={item.icon} alt={item.title} width={20} height={20} />
+                    <span className="text-[16px] text-gray-700">{item.title}</span>
                   </Link>
                 ))}
               </div>

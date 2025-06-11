@@ -30,42 +30,43 @@ const articles = [
 
 const OurLatestArticle = () => {
   return (
-    <div className="bg-[#F8F9FB] px-4 md:px-20 py-16 w-full">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
-        <div className="w-[50%]">
-          <h2 className="text-[55px] font-semibold leading-[62px]">
+    <div className="bg-[#F8F9FB] px-4 sm:px-10 md:px-20 py-16 w-full">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 mb-12">
+        {/* Title */}
+        <div className="w-full md:w-1/2">
+          <h2 className="text-3xl sm:text-4xl md:text-[55px] font-semibold leading-tight md:leading-[62px]">
             <span className="text-[#4F6BF0]">Our Latest</span> <br />
             <span>Article</span>
           </h2>
-          <div className="h-[1px] w-[100%] bg-[#7C7C7C] mt-4" />
+          <div className="h-[1px] w-full bg-[#7C7C7C] mt-4" />
         </div>
 
-        <div className="mt-6 md:mt-0 flex flex-col justify-start items-start gap-4 w-[45%]">
-          <button className="bg-[#4F6BF0] text-white px-5 py-2 flex justify-center items-center rounded-md font-semibold text-[22px]">
-            Explore more{" "}
-            <span>
-              <Image src={urarrow} alt="urarrow" width={40} />
-            </span>
+        {/* Description & Button */}
+        <div className="w-full md:w-1/2 flex flex-col gap-4">
+          <button className="bg-[#4F6BF0] text-white px-6 py-3 flex items-center gap-2 rounded-md font-semibold text-[18px] sm:text-[20px] w-fit">
+            Explore more
+            <Image src={urarrow} alt="urarrow" width={30} />
           </button>
-          <p className="text-[25px] leading-[32px] font-[400] text-[#3B3B3B]">
-            Offer a wide range of services to help businesses establish and
-            enhance their online presence.
+          <p className="text-base sm:text-lg md:text-[22px] leading-snug text-[#3B3B3B]">
+            Offer a wide range of services to help businesses establish and enhance their online presence.
           </p>
         </div>
       </div>
 
+      {/* Articles Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {articles.map((item, index) => (
           <div key={index}>
             <Image
               src={item.image}
               alt={item.title}
-              className="w-full h-[300px] object-cover"
+              className="w-full h-[250px] sm:h-[280px] md:h-[300px] object-cover rounded-md"
             />
-            <p className="text-[20px] mt-4">
+            <p className="text-[16px] sm:text-[18px] text-[#555] mt-4">
               {item.date} | {item.category}
             </p>
-            <h3 className="mt-2 font-semibold text-[29px] leading-[36px]">
+            <h3 className="mt-2 font-semibold text-[22px] sm:text-[25px] md:text-[29px] leading-[30px] sm:leading-[34px] md:leading-[36px] text-[#111]">
               {item.title}
             </h3>
           </div>

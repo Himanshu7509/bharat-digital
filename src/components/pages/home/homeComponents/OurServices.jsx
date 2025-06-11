@@ -1,52 +1,63 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import arrow from "@/components/assets/Vector.png";
 import webIcon from "@/components/assets/web.png";
 import appIcon from "@/components/assets/app.png";
 import uiIcon from "@/components/assets/ui.png";
-import urarrow from '@/components/assets/ur-arrow.png'
+import urarrow from "@/components/assets/ur-arrow.png";
 import Link from "next/link";
 
 const services = [
   {
     title: "Web Design & Development",
-    description: "we craft visually stunning, user-friendly, and high-performance websites.",
+    description:
+      "We craft visually stunning, user-friendly, and high-performance websites.",
     icon: webIcon,
   },
   {
     title: "App Development",
-    description: "we craft visually stunning, user-friendly, and high-performance websites.",
+    description:
+      "We craft visually stunning, user-friendly, and high-performance websites.",
     icon: appIcon,
   },
   {
     title: "UI/UX Design",
-    description: "we craft visually stunning, user-friendly, and high-performance websites.",
+    description:
+      "We craft visually stunning, user-friendly, and high-performance websites.",
     icon: uiIcon,
   },
 ];
 
 const OurServices = () => {
   return (
-    <div className="w-full bg-[#0B0C0F] py-20 flex justify-center items-center">
-      <div className="w-[90%] flex flex-col gap-10">
+    <div className="w-full bg-[#0B0C0F] py-16 sm:py-20 flex justify-center items-center">
+      <div className="w-[90%] max-w-[1400px] flex flex-col gap-10">
         {/* Section Header */}
-        <div className="flex justify-between items-center flex-wrap gap-4">
-          
-            <p className="text-[#4F6BF0] text-[25px] font-raleway uppercase flex items-center">
-              OUR SERVICES
-              <Image src={arrow} alt="Arrow" width={80} height={9} className="ml-2" />
-            </p>
-          
-           <div className="w-full flex justify-between items-center">
-             <h2 className="Heading leading-[70px]">
+        <div className="flex flex-col gap-4 sm:gap-6">
+          <p className="text-[#4F6BF0] text-lg sm:text-xl md:text-[25px] font-raleway uppercase flex items-center">
+            OUR SERVICES
+            <Image
+              src={arrow}
+              alt="Arrow"
+              width={60}
+              height={8}
+              className="ml-2"
+            />
+          </p>
+
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white leading-snug">
               Turn Information Into Actionable Insights
             </h2>
-          <Link href="/services">
-          <button className="bg-[#4F6BF0] text-white px-6 py-2 cursor-pointer flex justify-center items-center rounded-sm font-semibold text-[22px]">
-            More Services <span><Image src={urarrow} alt="urarrow" width={40}/></span>
-          </button>
-          </Link>
-           </div>
+
+            <Link href="/services">
+              <button className="bg-[#4F6BF0] text-white px-5 sm:px-6 py-3 flex items-center gap-2 rounded-sm font-semibold text-[18px] sm:text-[20px]">
+                More Services
+                <Image src={urarrow} alt="urarrow" width={30} />
+              </button>
+            </Link>
+          </div>
         </div>
 
         {/* Services Cards */}
@@ -54,18 +65,15 @@ const OurServices = () => {
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="border border-[#4E4E4E] rounded-xl flex flex-col justify-between items-center text-center p-6 bg-[#0F0F11] "
+              className="border border-[#4E4E4E] rounded-xl bg-[#0F0F11] p-6 flex flex-col items-start gap-4"
             >
-              
-              {/* <Image src={service.icon} alt={service.title} width={100} height={100} className="mb-8" /> */}
-
-              <div className="bg-[#0F0F11] text-white w-full p-4 rounded-lg">
-                <h3 className="font-medium text-[25px] mb-1 flex items-center justify-start gap-2">
-                  <Image src={service.icon} alt="icon" width={30} height={30} />
-                  {service.title}
-                </h3>
-                <p className="text-[20px] text-[#FFFFFF] font-raleway">{service.description}</p>
-              </div>
+              <h3 className="text-white text-xl sm:text-2xl font-semibold flex items-center gap-2">
+                <Image src={service.icon} alt="icon" width={30} height={30} />
+                {service.title}
+              </h3>
+              <p className="text-[#FFFFFF] text-base sm:text-lg font-raleway">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
