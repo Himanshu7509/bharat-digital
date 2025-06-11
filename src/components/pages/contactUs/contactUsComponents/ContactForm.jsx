@@ -202,17 +202,20 @@ const ContactForm = () => {
         </div>
       </div>
     </div>
-        <div className="w-full h-[480px] overflow-hidden p-6 mb-4">
-          <iframe
-           title="Google Map Location"
-           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6561.210993309147!2d79.05923680865642!3d21.13999799798919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c060d6a8983b%3A0x6e9678ae12e13fd4!2sDharampeth%20Tower!5e0!3m2!1sen!2sin!4v1739422850317!5m2!1sen!2sin"
-           width="100%"
-            height="450"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"></iframe>   
-        </div> 
+   <div className="w-full h-[480px] overflow-hidden p-6 mb-4">
+  <iframe
+    title="Kartik EngiTech Services Location"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14019.876006831925!2d77.3627048!3d28.6263518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce58ce4b20b7b%3A0xce2480a953686058!2sKartik%20EngiTech%20Services%20Private%20Limited%2C%20Block%20A%2C%20Industrial%20Area%2C%20Sector%2062%2C%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1718120448377!5m2!1sen!2sin"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
+
+
     </>
   )
 }

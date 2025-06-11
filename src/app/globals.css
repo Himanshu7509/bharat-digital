@@ -2,17 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root {
-  --font-family: var(--font-oswald);
+
+/* Set default font to Oswald for everything */
+body {
+  font-family: "Oswald", sans-serif;
 }
 
-body{
-    font-family: "Oswald", sans-serif;
+/* Apply Raleway font only to p and span globally */
+p, span {
+  font-family: "Raleway", sans-serif !important;
 }
 
+
+/* Custom heading with gradient */
 .Heading {
   font-size: 55px;
-  font-weight: 600; 
+  font-weight: 600;
   background: linear-gradient(to bottom, white, #9B9B9B);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -20,7 +25,7 @@ body{
   color: transparent;
 }
 
-
+/* Marquee animation */
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -34,19 +39,14 @@ body{
   animation: marquee 20s linear infinite;
 }
 
-p {
- font-family: "Raleway", sans-serif;
-}
-
+/* Optional utility classes using Raleway (if used elsewhere) */
 .RalewayButtons {
- font-family: "Raleway", sans-serif;
-
+  font-family: "Raleway", sans-serif;
 }
 
 .BigCustomHeading {
   font-size: 18px;
   font-weight: 600;
-
 }
 
 .NormalCustomHeading {
@@ -57,21 +57,20 @@ p {
 .BigCustomParagraph {
   font-size: 8px;
   font-weight: 600;
-
 }
 
 .NormalCustomParagraph {
   font-size: 7px;
   font-weight: 500;
-
 }
 
 .FaqHeading {
-    font-family: 'Raleway', sans-serif;
-    font-size: 8px;
-    font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
 }
 
+/* Responsive styles */
 @media (min-width: 768px) {
   .BigCustomHeading {
     font-size: 35px;
@@ -92,7 +91,6 @@ p {
   .FaqHeading {
     font-size: 14px;
   }
-
 }
 
 @media (min-width: 1024px) {
@@ -115,6 +113,4 @@ p {
   .FaqHeading {
     font-size: 30px;
   }
-
-
 }
