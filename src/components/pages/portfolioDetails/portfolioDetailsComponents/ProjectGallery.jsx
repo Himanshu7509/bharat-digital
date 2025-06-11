@@ -7,17 +7,17 @@ const ProjectGallery = ({ data = [] }) => {
         {data.map((item, index) => (
           <div
             key={index}
-            className="bg-[#e6edff] rounded-2xl p-8 shadow-lg text-center flex flex-col justify-between items-center min-h-[400px]"
+            className="bg-[#e6edff] rounded-2xl shadow-lg text-center flex flex-col justify-between items-center min-h-[400px]"
           >
-            <div className="flex-1 flex items-center justify-center py-4 h-full w-full">
+            <div className="flex-1 flex items-center justify-center h-full w-full">
               <Image
                 src={item.image}
                 alt={item.alt}
-                className={item.className}
+                className={item.style}
               />
             </div>
             {item.title && (
-              <h3 className="text-xl font-bold text-gray-900 mt-6">{item.title}</h3>
+              <h3 className="text-xl text-gray-900  mb-4">{item.title}</h3>
             )}
           </div>
         ))}
