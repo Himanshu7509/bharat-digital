@@ -59,7 +59,7 @@ const ServiceTemplates = ({ data }) => {
                   index % 2 !== 0 ? "lg:flex-row-reverse" : ""
                 }`}
               >
-                <span className="absolute left-3 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-[#4F6BF0] rounded-full z-10 top-0 sm:top-[50%] sm:translate-y-[-50%]" />
+                <span className="absolute left-3 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-3 h-3 sm:w-5 sm:h-5 bg-[#4F6BF0] rounded-full z-10 top-0 sm:top-[0%] sm:translate-y-[-50%]" />
 
                 <div className="w-full lg:w-1/2">
                   <Image
