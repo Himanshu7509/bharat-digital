@@ -3,11 +3,12 @@ import React from 'react'
 import Header from '@/components/common/header/Header';
 import { Phone, Mail, Clock, MapPin } from 'lucide-react';
 import { useState } from 'react';
+import { postApi } from '@/components/utils/Api';
 
 const ContactForm = () => {
       const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    name: '',
+    phone: '',
     email: '',
     message: ''
   });
@@ -20,11 +21,13 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Handle form submission here
-    alert('Message sent successfully!');
+    const response = await postApi(formData)
+   console.log(response);
+   
+   
   };
   return (
     <>
@@ -112,6 +115,7 @@ const ContactForm = () => {
           </div>
 
           {/* Right Section - Contact Form */}
+         <form onSubmit={handleSubmit}>
           <div className="bg-white rounded-2xl p-8 shadow-lg">
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Contact Info</h2>
@@ -125,13 +129,13 @@ const ContactForm = () => {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name
+                    Name
                   </label>
                   <input
                     type="text"
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
+                    id="name"
+                    name="name"
+                    value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Your name"
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
@@ -139,15 +143,15 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name
+                   Contact No
                   </label>
                   <input
                     type="text"
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="Your last name"
+                    placeholder="Your Contact No  "
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
                   />
                 </div>
@@ -194,6 +198,7 @@ const ContactForm = () => {
               </button>
             </div>
           </div>
+          </form> 
         </div>
       </div>
     </div>
