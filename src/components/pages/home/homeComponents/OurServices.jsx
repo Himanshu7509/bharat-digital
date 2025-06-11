@@ -47,7 +47,7 @@ const OurServices = () => {
           </p>
 
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white leading-snug">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[55px] Heading font-semibold text-white leading-snug">
               Turn Information Into Actionable Insights
             </h2>
 

@@ -11,19 +11,18 @@ const WhoWeAre = () => {
       <div className="w-full max-w-[1400px]">
         {/* Title & Heading */}
         <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8">
-          <p className="text-xl sm:text-2xl md:text-[25px] text-white uppercase flex items-center">
+          <p className="text-sm sm:text-lg md:text-[25px] text-white uppercase flex items-center">
             Who We Are
-            <span className="ml-2">
+            <span className="lg:ml-2">
               <Image src={arrow} alt="Arrow" width={60} height={8} />
             </span>
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-[32px] font-semibold leading-snug text-white max-w-3xl">
+          <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[55px] font-semibold leading-snug Heading max-w-5xl">
             Axleo is a business that provides services <br className="hidden md:block" />
             related to online marketing.
           </h2>
         </div>
 
-        {/* Images + Description */}
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <Image
             src={Img1}

@@ -33,7 +33,7 @@ const Herosec = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full md:h-screen overflow-hidden">
       <div
         className="flex transition-transform duration-700 ease-in-out"
         style={{
@@ -44,23 +44,23 @@ const Herosec = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="w-screen h-screen bg-cover bg-center flex items-center px-4 sm:px-8 md:px-16"
+            className="w-screen md:h-screen bg-cover bg-center flex items-center px-4 sm:px-8 md:px-16 py-6"
             style={{
               backgroundImage: `url(${slide.background})`,
             }}
           >
             <div className="flex justify-between items-center w-full">
               {/* Left Content */}
-              <div className="w-full md:w-[60%] max-w-[850px]">
-                <h1 className="whitespace-pre-line text-[36px] sm:text-[48px] md:text-[64px] lg:text-[72px] xl:text-[80px] leading-tight font-bold uppercase bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent">
+              <div className="w-[65%] md:max-w-[850px]">
+                <h1 className="whitespace-pre-line text-[16px] sm:text-[40px] md:text-[60px] lg:text-[72px] xl:text-[80px] leading-tight font-bold uppercase bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent">
                   {slide.title}
                 </h1>
 
-                <p className="mt-6 text-white text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] max-w-[680px] leading-relaxed">
+                <p className="mt-6 text-white text-[6px] sm:text-[12px] md:text-[20px] lg:text-[22px] max-w-[680px] leading-relaxed">
                   {slide.text}
                 </p>
 
-                <button className="mt-6 w-[180px] sm:w-[200px] md:w-[215px] h-[52px] sm:h-[60px] flex justify-center items-center bg-[#4F6BF0] text-white font-semibold text-[16px] sm:text-[18px] rounded-sm">
+                <button className="mt-6 w-[60px] sm:w-[200px] md:w-[215px] h-[22px] sm:h-[60px] flex justify-center items-center bg-[#4F6BF0] text-white font-semibold text-[6px] sm:text-[18px] rounded-sm">
                   VIEW OUR WORKS
                 </button>
               </div>

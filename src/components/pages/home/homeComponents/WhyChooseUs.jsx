@@ -32,7 +32,7 @@ const WhyChooseUs = () => {
             </span>
           </p>
 
-          <h2 className="font-bold leading-tight text-[6vw] sm:text-[4.5vw] md:text-[2.7vw] mb-4">
+          <h2 className="font-bold leading-tight text-[6vw] sm:text-[4.5vw] md:text-[2.7vw] lg:text-[55px] Heading mb-4">
             Grow Your Brand With Our Social Media A-Team.
           </h2>
 
@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
           </p>
 
           {/* Bullet List */}
-          <ul className="space-y-4 text-[4vw] sm:text-[3vw] md:text-[1.3vw] text-[#C4C4C4] font-medium font-[Raleway]">
+          <ul className="space-y-4 text-[4vw] sm:text-[3vw] md:text-[1.3vw] text-[#C4C4C4] font-medium ">
             <li className="flex gap-2 items-start">
               <span className="text-[#7572FD] text-lg">●</span>
               <span>

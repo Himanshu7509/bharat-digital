@@ -46,7 +46,7 @@ const OurQuestion = () => {
             OUR QUESTION
             <Image src={arrow} alt="Arrow" width={80} height={9} className="ml-2" />
           </p>
-          <h2 className="Heading leading-[70px]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[55px] Heading leading-[70px]">
             Have any questions? Here some answers
           </h2>
         </div>

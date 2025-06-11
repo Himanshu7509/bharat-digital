@@ -47,7 +47,6 @@ const Header = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [teamMenuOpen, setTeamMenuOpen] = useState(false);
   
-  // Timeout refs for delayed closing
   const [servicesTimeout, setServicesTimeout] = useState(null);
   const [teamTimeout, setTeamTimeout] = useState(null);
 
@@ -74,7 +73,7 @@ const Header = () => {
   const handleServicesMouseLeave = () => {
     const timeout = setTimeout(() => {
       setDropdownOpen(false);
-    }, 2000);
+    }, 500);
     setServicesTimeout(timeout);
   };
 
@@ -90,7 +89,7 @@ const Header = () => {
   const handleTeamMouseLeave = () => {
     const timeout = setTimeout(() => {
       setTeamDropdownOpen(false);
-    }, 2000);
+    }, 500);
     setTeamTimeout(timeout);
   };
 
@@ -99,7 +98,7 @@ const Header = () => {
       {/* Top Header */}
       <div className="relative z-50 w-full bg-[#0B0C0F]">
         <div className="flex items-center justify-between px-4 md:px-8 py-4">
-          <Image src={BD} alt="Logo" className="w-[132px] h-[66px]" />
+          <Image src={BD} alt="Logo" className="w-[60px] md:w-[132px] h-[30px] md:h-[66px]" />
 
           <div className="hidden lg:flex items-center gap-10 text-white font-medium relative">
             <Link href="/" className="text-[21px] hover:text-[#4F6BF0]">Home</Link>

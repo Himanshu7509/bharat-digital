@@ -1,11 +1,10 @@
 import React from "react";
-import Image from "next/image";
 import bg from "@/components/assets/trail.png";
 
 const FreeTrail = () => {
   return (
     <div className="relative w-full h-[76px] sm:h-[139px] lg:h-[350px] overflow-hidden">
-      {/* Background image */}
+  
       <div
         className="absolute inset-0"
         style={{
@@ -23,7 +22,7 @@ const FreeTrail = () => {
           <p className="text-[#4461F2] text-[6px] sm:text-[12px] lg:text-[25px] font-medium mb-1">
             • Start your free trial •
           </p>
-          <h2 className="text-[12px] sm:text-[21px] lg:Heading lg:leading-[63px] w-[55%]">
+          <h2 className="text-[12px] sm:text-[21px] lg:text-[55px] font-semibold lg:Heading lg:leading-[63px] w-[55%]">
             Ready To Take Your SEO To The Next Level?
           </h2>
         </div>
