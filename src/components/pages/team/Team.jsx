@@ -7,10 +7,10 @@ import Footer from '@/components/common/footer/Footer'
 const Team = () => {
   return (
 <>
-<Header/>
+
 <TeamBanner/>
 <TeamMembers/>
-<Footer/>
+
 </>
   )
 }
