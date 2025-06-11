@@ -71,7 +71,7 @@ const OurClient = () => {
           nextEl: nextRef.current,
         }}
         onBeforeInit={(swiper) => {
-          // Attach navigation refs
+         
           if (swiper.params.navigation) {
             swiper.params.navigation.prevEl = prevRef.current;
             swiper.params.navigation.nextEl = nextRef.current;
