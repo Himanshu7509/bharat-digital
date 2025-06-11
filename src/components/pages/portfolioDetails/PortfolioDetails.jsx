@@ -2,7 +2,7 @@ import React from 'react'
 import HeroSection from './portfolioDetailsComponents/HeroSection'
 import GoldStory from './portfolioDetailsComponents/GoldStory'
 import ProjectGallery from './portfolioDetailsComponents/ProjectGallery'
-import AllProjects from './portfolioDetailsComponents/AllProjects'
+import AllProjects from './portfolioDetailsComponents/ProjectCarouselDataProvider'
 import ContactNow from '../aboutus/aboutUsComponents/ContactNow'
 
 const PortfolioDetails = () => {
@@ -12,7 +12,7 @@ const PortfolioDetails = () => {
       <GoldStory />
       <ProjectGallery />
       <AllProjects/>
-      < ContactNow/>
+      <ContactNow/>
     </div>
   )
 }
