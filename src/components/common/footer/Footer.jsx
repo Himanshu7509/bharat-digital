@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import logo from "../../assets/bd.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -20,7 +21,6 @@ export default function Footer() {
             Don’t Missed Subscribed!
           </h3>
           <div className="flex flex-col sm:flex-row w-full max-w-md">
-          
             <div className="w-full max-w-md border border-gray-600 flex items-center px-4 py-2 bg-transparent">
               <input
                 type="email"
@@ -32,70 +32,78 @@ export default function Footer() {
               </button>
             </div>
           </div>
-
-          <h3 className="text-xl sm:text-2xl font-bold mt-8 mb-4">
-            Contact with us
-          </h3>
-          <div className="flex flex-wrap gap-3">
-            {[Instagram, Twitter, Facebook, Linkedin, Youtube].map(
-              (Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 border border-gray-600 rounded-full flex items-center justify-center hover:border-gray-400 transition-colors"
-                >
-                  <Icon size={18} />
-                </a>
-              )
-            )}
-          </div>
         </div>
 
-        {/* Company + Services side by side on mobile/tablet */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 mb-12">
-          {/* Company Links */}
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12 mb-12">
+          {/* Social */}
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-4">Company</h3>
-            <nav className="space-y-2 text-gray-300">
-              {[
-                "Home",
-                "About Us",
-                "Service",
-                "Portfolio",
-                "Blog",
-                "Contact Us",
-              ].map((item, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="block hover:text-white transition-colors"
-                >
-                  {item}
-                </a>
-              ))}
-            </nav>
+            <h3 className="text-xl sm:text-2xl font-bold mt-8 mb-4">
+              Contact with us
+            </h3>
+            <div className="flex flex-wrap gap-3">
+              {[Instagram, Twitter, Facebook, Linkedin, Youtube].map(
+                (Icon, i) => (
+                  <a
+                    key={i}
+                    href="#"
+                    className="w-10 h-10 border border-gray-600 rounded-full flex items-center justify-center hover:border-gray-400 transition-colors"
+                  >
+                    <Icon size={18} />
+                  </a>
+                )
+              )}
+            </div>
           </div>
 
-          {/* Services Links */}
-          <div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-4">Our Services</h3>
-            <nav className="space-y-2 text-gray-300">
-              {[
-                "App Application",
-                "Web Development",
-                "UI/UX Design",
-                "Digital Marketing",
-                "Software Development",
-              ].map((item, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="block hover:text-white transition-colors"
-                >
-                  {item}
-                </a>
-              ))}
-            </nav>
+          {/* Links */}
+          <div className="flex gap-12 md:gap-40 lg:gap-60">
+            {/* Company Links */}
+            <div>
+              <h3 className="text-xl sm:text-2xl font-bold mb-4">Company</h3>
+              <nav className="space-y-2 text-gray-300">
+                {[
+                  { name: "Home", path: "/" },
+                  { name: "About Us", path: "/about" },
+                  { name: "Service", path: "/services" },
+                  { name: "Portfolio", path: "/portfolio" },
+                  { name: "Team", path: "/team" },
+                  { name: "Blog", path: "/blog" },
+                  { name: "Contact Us", path: "/contact" },
+                ].map((item, i) => (
+                  <Link
+                    key={i}
+                    href={item.path}
+                    className="block hover:text-white transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* Services Links */}
+            <div>
+              <h3 className="text-xl sm:text-2xl font-bold mb-4">
+                Our Services
+              </h3>
+              <nav className="space-y-2 text-gray-300">
+                {[
+                  { name: "App Development", path: "/services/app-development" },
+                  { name: "Website Development", path: "/services/web-development" },
+                  { name: "Software Development", path: "/services/software-development" },
+                  { name: "UI/UX Design", path: "/services/ui-design" },
+                ].map((item, i) => (
+                  <Link
+                    key={i}
+                    href={item.path}
+                    className="block hover:text-white transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </nav>
+            </div>
           </div>
         </div>
 
