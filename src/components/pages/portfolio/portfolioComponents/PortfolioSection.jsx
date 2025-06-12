@@ -73,23 +73,23 @@ const PortfolioSection = () => {
     <div className="max-w-7xl mx-auto px-4 py-16">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-[36px] sm:text-[44px] md:text-[55px] font-semibold text-blue-600 mb-4">
+        <h1 className="text-[25px] sm:text-[40px] md:text-[55px] font-semibold text-blue-600 mb-4">
           PORTFOLIO
         </h1>
-        <p className="text-[#747474] text-[20px] sm:text-[28px] md:text-[35px] font-semibold leading-tight">
-          A company portfolio highlights its services, projects, achievements, and expertise.
+        <p className="text-[#747474] text-[12px] sm:text-[20px] md:text-[35px] font-semibold leading-tight">
+          A company portfolio highlights its services, projects, achievements,
+          and expertise.
         </p>
       </div>
 
-      {/* Category Filter */}
-      <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
+      <div className="mt-6 sm:mt-10 flex items-center justify-start sm:justify-center gap-2 md:gap-4 mb-12 overflow-x-auto px-2 sm:px-4 scrollbar-hide">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => handleCategoryChange(category)}
-            className={`px-3 sm:px-5 py-2 sm:py-3 rounded-md text-[16px] sm:text-[18px] font-medium transition-all duration-300 ${
+            className={`px-3 sm:px-5 py-2 sm:py-3 rounded-md text-[14px] sm:text-[16px] md:text-[18px] font-medium whitespace-nowrap transition-all duration-300 ${
               activeCategory === category
-                ? "bg-[#4F6BF0] text-white shadow-lg"
+                ? "bg-[#4F6BF0] text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             }`}
           >
@@ -98,7 +98,6 @@ const PortfolioSection = () => {
         ))}
       </div>
 
-      {/* Portfolio Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
         {currentItems.map((item) => (
           <div key={item.id} className="group relative overflow-hidden">
@@ -125,7 +124,9 @@ const PortfolioSection = () => {
           {getPageNumbers().map((page, index) => (
             <React.Fragment key={index}>
               {page === "..." ? (
-                <span className="px-3 py-2 text-gray-500 text-sm sm:text-base">...</span>
+                <span className="px-3 py-2 text-gray-500 text-sm sm:text-base">
+                  ...
+                </span>
               ) : (
                 <button
                   onClick={() => handlePageChange(page)}
@@ -154,7 +155,9 @@ const PortfolioSection = () => {
       {/* No Data Message */}
       {currentItems.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-gray-500 text-lg">No portfolio items found for the selected category.</p>
+          <p className="text-gray-500 text-lg">
+            No portfolio items found for the selected category.
+          </p>
         </div>
       )}
     </div>

@@ -40,16 +40,16 @@ const OurTech = () => {
         background: 'linear-gradient(to right, #7572FD1F, #FF8B4A1F)',
       }}
     >
-      <div className="w-[70%] mx-auto text-center">
+      <div className="w-[90%] sm:w-[70%] mx-auto text-center">
         <p className="text-[#6366F1] font-medium">Technology</p>
         <h2 className="text-3xl md:text-4xl font-bold mb-10">
-          Our <span className="text-[#333]">TechStack</span>
+          Our TechStack
         </h2>
 
-        <div className="flex flex-wrap justify-center items-center gap-20">
+        <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-10 lg:gap-20">
           {techStack.map((tech, idx) => (
             <div key={idx} className="flex flex-col items-center">
-              <Image src={tech.src} alt={tech.label} className="w-12 h-12 object-contain" />
+              <Image src={tech.src} alt={tech.label} className="w-10 sm:w-12 h-10 sm:h-12 object-contain" />
               <p className="mt-2 font-medium">{tech.label}</p>
             </div>
           ))}

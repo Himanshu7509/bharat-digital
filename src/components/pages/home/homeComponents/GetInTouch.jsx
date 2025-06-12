@@ -61,7 +61,7 @@ const handleSubmit = async(e) => {
   return (
     <div className="min-h-screen bg-[#121212] text-white px-6 py-16 md:px-20 w-full flex justify-center items-center">
       <div className="w-full max-w-5xl">
-        <h2 className="Heading mb-10 text-center">Let’s Get in Touch</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[55px] Heading mb-10 text-center">Let’s Get in Touch</h2>
 
         {/* Input Fields */}
         <div className="grid md:grid-cols-2 gap-6 mb-6 text-[20px]">

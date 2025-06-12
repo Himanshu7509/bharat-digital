@@ -132,7 +132,7 @@ const portfoliodetailsdata = {
             },
         ],
     },
-     "Game-portfolio": {
+     "game-portfolio": {
         HeroBanner: [
             {
                 title: "Game Portfolio Showcase",
@@ -235,7 +235,7 @@ const portfoliodetailsdata = {
             },
         ],
     },
-     "App-portfolio": {
+     "app-portfolio": {
         HeroBanner: [
             {
                 title: "App Portfolio Showcase",
@@ -338,7 +338,7 @@ const portfoliodetailsdata = {
             },
         ],
     },
-     "Software-portfolio": {
+     "software-portfolio": {
         HeroBanner: [
             {
                 title: "Software Portfolio Showcase",
