@@ -60,7 +60,7 @@ export default function Footer() {
           <div className="flex gap-12 md:gap-40 lg:gap-60">
             {/* Company Links */}
             <div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-4">Company</h3>
+              <h3 className="text-xl sm:text-2xl font-medium mb-4">Company</h3>
               <nav className="space-y-2 text-gray-300">
                 {[
                   { name: "Home", path: "/" },
@@ -84,7 +84,7 @@ export default function Footer() {
 
             {/* Services Links */}
             <div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-4">
+              <h3 className="text-xl sm:text-2xl font-medium mb-4">
                 Our Services
               </h3>
               <nav className="space-y-2 text-gray-300">

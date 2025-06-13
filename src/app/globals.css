@@ -4,15 +4,21 @@ body {
   font-family: var(--font-oswald), sans-serif;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 input,
+textarea,
 p,
+nav,
 span {
   font-family: var(--font-raleway), sans-serif;
 }
 
 .Heading {
   font-weight: 600;
-  background: linear-gradient(to bottom, white, #9B9B9B);
+  background: linear-gradient(to bottom, white, #9b9b9b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -20,8 +26,12 @@ span {
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
@@ -55,16 +65,36 @@ span {
   font-weight: 700;
 }
 @media (min-width: 768px) {
-  .BigCustomHeading { font-size: 35px; }
-  .NormalCustomHeading { font-size: 25px; }
-  .BigCustomParagraph { font-size: 17px; }
-  .NormalCustomParagraph { font-size: 18px; }
-  .FaqHeading { font-size: 22px; }
+  .BigCustomHeading {
+    font-size: 35px;
+  }
+  .NormalCustomHeading {
+    font-size: 25px;
+  }
+  .BigCustomParagraph {
+    font-size: 17px;
+  }
+  .NormalCustomParagraph {
+    font-size: 18px;
+  }
+  .FaqHeading {
+    font-size: 22px;
+  }
 }
 @media (min-width: 1024px) {
-  .BigCustomHeading { font-size: 55px; }
-  .NormalCustomHeading { font-size: 55px; }
-  .BigCustomParagraph { font-size: 35px; }
-  .NormalCustomParagraph { font-size: 25px; }
-  .FaqHeading { font-size: 45px; }
+  .BigCustomHeading {
+    font-size: 55px;
+  }
+  .NormalCustomHeading {
+    font-size: 55px;
+  }
+  .BigCustomParagraph {
+    font-size: 35px;
+  }
+  .NormalCustomParagraph {
+    font-size: 25px;
+  }
+  .FaqHeading {
+    font-size: 45px;
+  }
 }

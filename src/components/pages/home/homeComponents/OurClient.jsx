@@ -83,7 +83,7 @@ const OurClient = () => {
       >
         {duplicatedReviews.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="h-full bg-white text-black rounded-xl p-6 flex flex-col justify-between min-h-[350px]">
+            <div className="h-full bg-white text-black rounded-xl p-6 flex flex-col justify-between min-h-[390px]">
               <div className="space-y-6 flex-grow">
                 <Image src={double} alt="quote" width={30} height={30} />
                 <p className="text-[18px] font-medium leading-7">{item.message}</p>

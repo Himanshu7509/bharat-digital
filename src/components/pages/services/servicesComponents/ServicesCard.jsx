@@ -101,7 +101,7 @@ const ServicesCard = () => {
       <div className="w-[90%] flex flex-col gap-10">
         {/* Title */}
         <div className="text-center">
-          <h1 className="text-[7vw] sm:text-[5vw] md:text-[3vw] lg:text-[2.5vw] xl:text-[2vw] font-bold text-white Heading leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[55px] xl:text-[2vw] font-bold text-white Heading leading-tight">
             OUR SERVICES
           </h1>
         </div>

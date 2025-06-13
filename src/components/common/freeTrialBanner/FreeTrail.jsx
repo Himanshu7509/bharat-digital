@@ -1,5 +1,6 @@
 import React from "react";
 import bg from "@/components/assets/trail.png";
+import Link from "next/link";
 
 const FreeTrail = () => {
   return (
@@ -27,9 +28,11 @@ const FreeTrail = () => {
           </h2>
         </div>
 
-        <button className="mt-6 cursor-pointer bg-gradient-to-r from-[#4F6BF0] to-[#25BAC3] text-white px-3 md:px-6 py-2 md:py-3 uppercase rounded-sm font-semibold text-[6px] sm:text-[12px] lg:text-[25px]">
+       <Link href="/contact">
+       <button className="mt-6 cursor-pointer bg-gradient-to-r from-[#4F6BF0] to-[#25BAC3] text-white px-3 md:px-6 py-2 md:py-3 uppercase rounded-sm font-semibold text-[6px] sm:text-[12px] lg:text-[25px]">
           CONTACT NOW
         </button>
+       </Link> 
       </div>
     </div>
   );

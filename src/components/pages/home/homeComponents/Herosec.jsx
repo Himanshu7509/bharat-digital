@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import bg1 from "@/components/assets/Background.png";
 import bg2 from "@/components/assets/Background2.png";
 import bg3 from "@/components/assets/Background3.png";
+import Link from "next/link";
 
 const slides = [
   {
@@ -60,9 +61,11 @@ const Herosec = () => {
                   {slide.text}
                 </p>
 
-                <button className="mt-6 w-[60px] sm:w-[200px] md:w-[215px] h-[22px] sm:h-[60px] flex justify-center items-center bg-[#4F6BF0] text-white font-semibold text-[6px] sm:text-[18px] rounded-sm">
+                <Link href="/portfolio">
+                <button className="mt-6 w-[60px] sm:w-[200px] cursor-pointer md:w-[215px] h-[22px] sm:h-[60px] flex justify-center items-center bg-[#4F6BF0] text-white font-semibold text-[6px] sm:text-[18px] rounded-sm">
                   VIEW OUR WORKS
                 </button>
+                </Link>
               </div>
 
               {/* Numbered Dots */}

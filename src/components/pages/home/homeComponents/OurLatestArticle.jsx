@@ -6,6 +6,7 @@ import b1 from "@/components/assets/ar1.png";
 import b2 from "@/components/assets/ar2.png";
 import b3 from "@/components/assets/ar3.png";
 import urarrow from "@/components/assets/ur-arrow.png";
+import Link from "next/link";
 
 const articles = [
   {
@@ -44,10 +45,12 @@ const OurLatestArticle = () => {
 
         {/* Description & Button */}
         <div className="w-full md:w-1/2 flex flex-col gap-4">
-          <button className="bg-[#4F6BF0] text-white px-6 py-3 flex items-center gap-2 rounded-md font-semibold text-[18px] sm:text-[20px] w-fit">
+          <Link href="/blog">
+          <button className="bg-[#4F6BF0] text-white px-6 py-3 flex items-center gap-2 rounded-md font-semibold text-[18px] sm:text-[20px] w-fit cursor-pointer">
             Explore more
             <Image src={urarrow} alt="urarrow" width={30} />
           </button>
+          </Link>
           <p className="text-base sm:text-lg md:text-[22px] leading-snug text-[#3B3B3B]">
             Offer a wide range of services to help businesses establish and enhance their online presence.
           </p>
