@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import bannerimg from "@/components/assets/question.png";
+import bannerimg from "@/components/assets/14.jpg";
 import { Plus, X } from "lucide-react";
 import arrow from "@/components/assets/Vector.png";
 import phone from "@/components/assets/phone.png"

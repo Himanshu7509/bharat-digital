@@ -100,8 +100,8 @@ const Header = () => {
   return (
     <>
       {/* Top Header */}
-      <div className="relative z-50 w-full bg-[#0B0C0F]">
-        <div className="flex items-center justify-between px-4 md:px-8 py-4">
+      <div className=" sticky top-0 z-50 w-full bg-[#0B0C0F] ">
+        <div className=" flex items-center justify-between px-4 md:px-8 py-4">
           <Link href="/">
             <Image
               src={BD}

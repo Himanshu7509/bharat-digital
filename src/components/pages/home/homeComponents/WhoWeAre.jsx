@@ -1,8 +1,8 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import Img1 from "@/components/assets/w1.png";
-import Img2 from "@/components/assets/w2.png";
+import Img1 from "@/components/assets/15.jpg";
+import Img2 from "@/components/assets/12.jpg";
 import arrow from "@/components/assets/Vector.png";
 import Link from "next/link";
 import CountUp from "react-countup";
@@ -62,12 +62,12 @@ const WhoWeAre = () => {
           <Image
             src={Img1}
             alt="Team Working"
-            className="w-full md:w-1/3 h-auto object-cover rounded"
+            className="w-full md:w-1/3 md:h-[390px] lg:h-[500px] object-cover rounded"
           />
           <Image
             src={Img2}
             alt="Office View"
-            className="w-full md:w-1/3 h-auto object-cover rounded"
+            className="w-full md:w-1/3 md:h-[390px] lg:h-[500px] object-cover rounded"
           />
           <div className="w-full md:w-1/3">
             <p className="text-[#C4C4C4] mb-6 text-base sm:text-lg md:text-[20px] leading-relaxed font-light">

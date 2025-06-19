@@ -16,7 +16,7 @@ import img11 from "@/components/assets/p11.png";
 import img12 from "@/components/assets/p12.png";
 import img13 from "@/components/assets/p13.png";
 import img14 from "@/components/assets/p14.png";
-import rightImg1 from '@/components/assets/ap0.png';
+import rightImg1 from '@/components/assets/17.jpg';
 import UiImage from '@/components/assets/uiHero.png'
 import img15 from "@/components/assets/p15.png";
 import img16 from "@/components/assets/p16.png";
