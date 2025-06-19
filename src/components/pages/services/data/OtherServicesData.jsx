@@ -69,9 +69,10 @@ const servicesData = {
   "web-development": {
     HeroBanner: [
       {
-        title: "Web Design and Development",
-        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
-        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+       title: "Web Design and Development",
+para1: "At Bharat Digital, we create responsive, user-friendly, and visually stunning websites that reflect your brand and drive results. Our expert team ensures seamless functionality across all devices.",
+para2: "From corporate sites and portfolios to e-commerce and custom web applications, we deliver secure, SEO-optimized, and performance-driven web solutions tailored to your goals.",
+
         bannerImage: WebImage,
         gradientColor: ["#4F6BF0", "#25BAC3"]
       },
@@ -119,9 +120,10 @@ const servicesData = {
   "app-development": {
     HeroBanner: [
       {
-        title: "App Development",
-        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
-        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+       title: "App Development",
+para1: "At Bharat Digital, we craft powerful, intuitive, and scalable mobile and web applications tailored to meet your unique business objectives. Our development team focuses on performance, security, and seamless user experience.",
+para2: "From Android and iOS apps to cross-platform and custom enterprise solutions, we deliver future-ready apps that drive engagement and growth.",
+
         bannerImage: AppImage,
         gradientColor: ["#4F6BF0", "#25BAC3"]
       },
@@ -169,9 +171,10 @@ const servicesData = {
   "game-development": {
     HeroBanner: [
       {
-        title: "Game Development",
-        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
-        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+      title: "Game Development",
+para1: "At Bharat Digital, we build immersive, engaging, and high-performance games across mobile, desktop, and web platforms. Our team blends creativity with cutting-edge technology to deliver interactive experiences players love.",
+para2: "From casual mobile games to advanced multiplayer and AR/VR experiences, we ensure smooth gameplay, stunning visuals, and scalable architecture for long-term success.",
+
         bannerImage: GameImage,
         gradientColor: ["#00020C", "#273B97"]
       },
@@ -219,9 +222,10 @@ const servicesData = {
   "ui-design": {
     HeroBanner: [
       {
-        title: "UI/UX Design",
-        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
-        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+       title: "UI/UX Design",
+para1: "At Bharat Digital, we design intuitive and visually captivating user interfaces that enhance user experience and drive engagement. Our UI/UX team focuses on functionality, accessibility, and seamless interaction.",
+para2: "From mobile apps to enterprise platforms, we create user-centered designs that reflect your brand and improve usability across all devices and touchpoints.",
+
         bannerImage: UiImage,
         gradientColor: ["#00020C", "#273B97"]
       },
@@ -269,9 +273,10 @@ const servicesData = {
   "software-development": {
     HeroBanner: [
       {
-        title: "Software Development",
-        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
-        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+       title: "Software Development",
+para1: "At Bharat Digital, we deliver robust, scalable, and custom software solutions that align with your business goals. Our experienced developers ensure high performance, security, and seamless integration.",
+para2: "From enterprise software and automation tools to SaaS platforms and custom CRM systems, we build reliable solutions that streamline operations and drive digital transformation.",
+
         bannerImage: SoftImage,
         gradientColor: ["#010220", "black"]
       },
@@ -320,8 +325,9 @@ const servicesData = {
     HeroBanner: [
       {
         title: "Chatbot Development",
-        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
-        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+para1: "At Bharat Digital, we build intelligent and interactive chatbots that enhance customer engagement and automate support. Our chatbots are designed to deliver fast, accurate responses across web, mobile, and social platforms.",
+para2: "From lead generation and customer service to e-commerce and internal automation, we develop AI-powered chatbot solutions tailored to your business needs.",
+
         bannerImage: chatbotImage,
         gradientColor: ["#303D72", "#111427"]
       },
@@ -369,9 +375,10 @@ const servicesData = {
   "ai-ml": {
     HeroBanner: [
       {
-        title: "AI/ML",
-        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
-        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+       title: "AI/ML",
+para1: "At Bharat Digital, we harness the power of Artificial Intelligence and Machine Learning to build smart, data-driven solutions. Our AI/ML models help businesses automate processes, gain insights, and make intelligent decisions.",
+para2: "From predictive analytics and recommendation engines to natural language processing and computer vision, we develop custom AI/ML solutions that drive innovation and efficiency.",
+
         bannerImage: aiImage,
         gradientColor: ["#060829", "#060829"]
       },
@@ -419,9 +426,10 @@ const servicesData = {
   "digital-marketing": {
     HeroBanner: [
       {
-        title: "Digital Marketing & Solutions",
-        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
-        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+       title: "Digital Marketing & Solutions",
+para1: "At Bharat Digital, we craft result-oriented digital marketing strategies that boost visibility, generate leads, and grow your business online. Our team blends creativity with data to maximize campaign performance.",
+para2: "From SEO, social media, and paid ads to content marketing and analytics, we offer end-to-end digital solutions tailored to your brand and audience.",
+
         bannerImage: digitalImage,
         gradientColor: ["#07344B", "#07344B"]
       },
@@ -469,9 +477,10 @@ const servicesData = {
    "erp-development": {
     HeroBanner: [
       {
-        title: "EPR/CRM Development",
-        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
-        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+       title: "ERP/CRM Development",
+para1: "At Bharat Digital, we develop powerful ERP and CRM solutions that streamline operations, improve customer relationships, and drive business efficiency. Our systems are tailored to match your workflow and business goals.",
+para2: "From sales automation and customer support to inventory, finance, and HR management, we build secure, scalable, and fully integrated ERP/CRM platforms that grow with your business.",
+
         bannerImage: erpImage,
         gradientColor: ["#010220", "#010220"]
       },
@@ -569,9 +578,10 @@ const servicesData = {
    "business-consultant": {
     HeroBanner: [
       {
-        title: "Business Consultant",
-        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
-        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+       title: "Business Consultant",
+para1: "At Bharat Digital, our business consulting services are designed to help you identify growth opportunities, streamline operations, and stay ahead in a competitive market. We align strategy with execution for real-world impact.",
+para2: "From digital transformation and process optimization to marketing strategy and technology adoption, we offer expert guidance to elevate your business performance.",
+
         bannerImage: businessImage,
         gradientColor: ["#1F3498", "#25BAC300"]
       },
@@ -619,9 +629,10 @@ const servicesData = {
   "digital-card": {
     HeroBanner: [
       {
-        title: "Digital Card",
-        para1: "At JobQuick, we specialize in creating high-performing, user-friendly, and visually appealing websites tailored to your business needs. Our expert team designs and develops responsive, SEO-optimized.",
-        para2: "From corporate websites to e-commerce and custom web apps, we ensure secure, modern, and high-performing solutions.",
+       title: "Digital Card",
+para1: "At Bharat Digital, we design smart and interactive digital business cards that make networking seamless and impactful. Our digital cards are modern, shareable, and easily accessible from any device.",
+para2: "From clickable contact info and social links to custom branding and analytics, we offer personalized digital card solutions that help you stand out professionally.",
+
         bannerImage: cardImage,
         gradientColor: ["#2C5871", "#2C5871"]
       },

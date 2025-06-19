@@ -52,8 +52,8 @@ const WhoWeAre = () => {
               <Image src={arrow} alt="Arrow" width={60} height={8} />
             </span>
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[55px] font-semibold leading-snug Heading max-w-5xl">
-            Axleo is a business that provides services <br className="hidden md:block" />
+          <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[50px] font-semibold leading-snug Heading max-w-5xl">
+            Bharat Digital is a business that provides services <br className="hidden md:block" />
             related to online marketing.
           </h2>
         </div>

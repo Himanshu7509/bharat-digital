@@ -15,22 +15,22 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 const reviews = [
   {
     message:
-      "It’s just 1 month since I’m using Spend.In to manage my business expenses, but the result is very satisfying! My business finance now more neat than before, thanks to Spend.In!",
-    name: "Jimmy Bartney",
+      "Working with Bharat Digital was a game-changer for us! Their digital marketing strategy doubled our website traffic in just three months. We saw a massive boost in our online presence, thanks to their SEO and social media efforts.",
+    name: "Subhash Goyal",
     title: "Product Manager at Picko Lab",
     image: img1,
   },
   {
     message:
-      "Never thought that with Spend.In managing my business expenses is so easy! Been using this platform for 3 months and still counting!",
-    name: "Natasha Romanoff",
+      "Bharat Digital’s AI-powered chatbots transformed our customer service process. We now provide faster, 24/7 support, and our client satisfaction has significantly improved. Their team delivered beyond what we imagined.",
+    name: "Isabella Rossi",
     title: "Black Widow",
     image: img2,
   },
   {
     message:
-      "“The best”! That’s what I want to say to this platform, didn’t know that there’s a platform to help you manage your business expenses like this! Very recommended to you who have a big business!",
-    name: "Moritika Kazuki",
+      "Bharat Digital developed a custom CRM solution for our business, and the results have been phenomenal. Their team was responsive, professional, and delivered the project ahead of schedule. Highly recommend!",
+    name: "Priyank Sharma",
     title: "Finance Manager at Mangan",
     image: img3,
   },
