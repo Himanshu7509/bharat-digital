@@ -42,9 +42,9 @@ const ContactForm = () => {
                   We Promise That
                 </h1>
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  Pellentesque arcu facilisis nunc mi proin. Dignissim mattis in
-                  lectus tincidunt tincidunt ultrices. Diam convallis morbi
-                  pellentesque adipiscing.
+               We're here to help you! Reach out anytime—our team is ready to assist. Whether you have questions, feedback, or just want to connect, we're only a message away.
+
+
                 </p>
               </div>
 

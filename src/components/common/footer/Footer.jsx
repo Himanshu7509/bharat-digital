@@ -118,7 +118,7 @@ export default function Footer() {
           </div>
           <div>
             <p className="text-gray-400 mb-1">Phone</p>
-            <p className="text-lg font-semibold">+91 615 802 7231</p>
+            <p className="text-lg font-semibold">+1 615 802 7231</p>
           </div>
           <div>
             <p className="text-gray-400 mb-1">Email Now</p>

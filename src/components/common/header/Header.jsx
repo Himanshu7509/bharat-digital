@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronDown, ArrowUpRight, Menu, X, ChevronRight } from "lucide-react";
 
 import BD from "@/components/assets/bd.png";
@@ -45,6 +46,7 @@ const teamItems = [
 ];
 
 const Header = () => {
+  const pathname = usePathname();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [teamDropdownOpen, setTeamDropdownOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,6 +55,28 @@ const Header = () => {
 
   const [servicesTimeout, setServicesTimeout] = useState(null);
   const [teamTimeout, setTeamTimeout] = useState(null);
+
+  // Helper function to check if a path is active
+  const isActive = (path) => {
+    if (path === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(path);
+  };
+
+  // Helper function to get link classes
+  const getLinkClasses = (path, baseClasses = "text-[21px]") => {
+    const activeClass = isActive(path) ? "text-[#4F6BF0]" : "";
+    const hoverClass = "hover:text-[#4F6BF0]";
+    return `${baseClasses} ${activeClass} ${hoverClass}`;
+  };
+
+  // Helper function for mobile link classes
+  const getMobileLinkClasses = (path, baseClasses = "text-[18px] font-medium py-2") => {
+    const activeClass = isActive(path) ? "text-[#4F6BF0]" : "text-gray-800";
+    const hoverClass = "hover:text-[#4F6BF0]";
+    return `${baseClasses} ${activeClass} ${hoverClass}`;
+  };
 
   const closeSidebar = () => {
     setMenuOpen(false);
@@ -100,8 +124,8 @@ const Header = () => {
   return (
     <>
       {/* Top Header */}
-      <div className=" sticky top-0 z-50 w-full bg-[#0B0C0F] ">
-        <div className=" flex items-center justify-between px-4 md:px-8 py-4">
+      <div className="sticky top-0 z-50 w-full bg-[#0B0C0F]">
+        <div className="flex items-center justify-between px-4 md:px-8 py-4">
           <Link href="/">
             <Image
               src={BD}
@@ -111,10 +135,10 @@ const Header = () => {
           </Link>
 
           <div className="hidden lg:flex items-center gap-10 text-white font-medium relative">
-            <Link href="/" className="text-[21px] hover:text-[#4F6BF0]">
+            <Link href="/" className={getLinkClasses("/")}>
               Home
             </Link>
-            <Link href="/about" className="text-[21px] hover:text-[#4F6BF0]">
+            <Link href="/about" className={getLinkClasses("/about")}>
               About Us
             </Link>
 
@@ -124,7 +148,7 @@ const Header = () => {
               onMouseEnter={handleServicesMouseEnter}
               onMouseLeave={handleServicesMouseLeave}
             >
-              <div className="flex items-center gap-1 text-[21px] cursor-pointer hover:text-[#4F6BF0]">
+              <div className={`flex items-center gap-1 cursor-pointer ${getLinkClasses("/services")}`}>
                 <Link href="/services" className="hover:text-[#4F6BF0]">
                   Services
                 </Link>
@@ -159,10 +183,7 @@ const Header = () => {
               )}
             </div>
 
-            <Link
-              href="/portfolio"
-              className="text-[21px] hover:text-[#4F6BF0]"
-            >
+            <Link href="/portfolio" className={getLinkClasses("/portfolio")}>
               Portfolio
             </Link>
 
@@ -171,7 +192,7 @@ const Header = () => {
               onMouseEnter={handleTeamMouseEnter}
               onMouseLeave={handleTeamMouseLeave}
             >
-              <div className="flex items-center gap-1 text-[21px] cursor-pointer hover:text-[#4F6BF0]">
+              <div className={`flex items-center gap-1 cursor-pointer ${getLinkClasses("/team")}`}>
                 <Link href="/team" className="hover:text-[#4F6BF0]">
                   Team
                 </Link>
@@ -206,7 +227,7 @@ const Header = () => {
               )}
             </div>
 
-            <Link href="/blog" className="text-[21px] hover:text-[#4F6BF0]">
+            <Link href="/blog" className={getLinkClasses("/blog")}>
               Blog
             </Link>
           </div>
@@ -249,20 +270,20 @@ const Header = () => {
           <Link
             href="/"
             onClick={closeSidebar}
-            className="text-[18px] font-medium text-gray-800 hover:text-[#4F6BF0] py-2"
+            className={getMobileLinkClasses("/")}
           >
             Home
           </Link>
           <Link
             href="/about"
             onClick={closeSidebar}
-            className="text-[18px] font-medium text-gray-800 hover:text-[#4F6BF0] py-2"
+            className={getMobileLinkClasses("/about")}
           >
             About Us
           </Link>
 
           <div className="py-2">
-            <button className="flex items-center justify-between w-full text-[18px] font-medium text-gray-800 hover:text-[#4F6BF0]">
+            <button className={`flex items-center justify-between w-full ${getMobileLinkClasses("/services")}`}>
               <Link href="/services" onClick={closeSidebar}>
                 Services
               </Link>
@@ -281,7 +302,11 @@ const Header = () => {
                     key={index}
                     href={`/services/${service.path}`}
                     onClick={closeSidebar}
-                    className="flex items-center gap-3 py-2 hover:bg-gray-100 rounded-md px-2"
+                    className={`flex items-center gap-3 py-2 rounded-md px-2 ${
+                      isActive(`/services/${service.path}`)
+                        ? "bg-blue-50 text-[#4F6BF0]"
+                        : "hover:bg-gray-100"
+                    }`}
                   >
                     <Image
                       src={service.icon}
@@ -289,7 +314,11 @@ const Header = () => {
                       width={20}
                       height={20}
                     />
-                    <span className="text-[16px] text-gray-700">
+                    <span className={`text-[16px] ${
+                      isActive(`/services/${service.path}`)
+                        ? "text-[#4F6BF0] font-semibold"
+                        : "text-gray-700"
+                    }`}>
                       {service.title}
                     </span>
                   </Link>
@@ -301,7 +330,7 @@ const Header = () => {
           <Link
             href="/portfolio"
             onClick={closeSidebar}
-            className="text-[18px] font-medium text-gray-800 hover:text-[#4F6BF0] py-2"
+            className={getMobileLinkClasses("/portfolio")}
           >
             Portfolio
           </Link>
@@ -309,7 +338,7 @@ const Header = () => {
           <div className="py-2">
             <button
               onClick={() => setTeamMenuOpen(!teamMenuOpen)}
-              className="flex items-center justify-between w-full text-[18px] font-medium text-gray-800 hover:text-[#4F6BF0]"
+              className={`flex items-center justify-between w-full ${getMobileLinkClasses("/team")}`}
             >
               Team
               <ChevronRight
@@ -326,7 +355,11 @@ const Header = () => {
                     key={index}
                     href={`/${item.path}`}
                     onClick={closeSidebar}
-                    className="flex items-center gap-3 py-2 hover:bg-gray-100 rounded-md px-2"
+                    className={`flex items-center gap-3 py-2 rounded-md px-2 ${
+                      isActive(`/${item.path}`)
+                        ? "bg-blue-50 text-[#4F6BF0]"
+                        : "hover:bg-gray-100"
+                    }`}
                   >
                     <Image
                       src={item.icon}
@@ -334,7 +367,11 @@ const Header = () => {
                       width={20}
                       height={20}
                     />
-                    <span className="text-[16px] text-gray-700">
+                    <span className={`text-[16px] ${
+                      isActive(`/${item.path}`)
+                        ? "text-[#4F6BF0] font-semibold"
+                        : "text-gray-700"
+                    }`}>
                       {item.title}
                     </span>
                   </Link>
@@ -346,7 +383,7 @@ const Header = () => {
           <Link
             href="/blog"
             onClick={closeSidebar}
-            className="text-[18px] font-medium text-gray-800 hover:text-[#4F6BF0] py-2"
+            className={getMobileLinkClasses("/blog")}
           >
             Blog
           </Link>

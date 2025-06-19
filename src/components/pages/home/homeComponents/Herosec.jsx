@@ -9,17 +9,17 @@ const slides = [
   {
     background: bg1.src,
     title: "SMART DIGITAL\nBUSINESS FOR\nSOLUTIONS",
-    text: "We specialize in a comprehensive range services, including branding, digital marketing, content creation, and web design, all to meet the needs of each client.",
+    text: "We provide smart, digital solutions to help businesses grow and adapt. By using modern technology, we streamline operations and drive real results through tailored strategies.",
   },
   {
     background: bg2.src,
     title: "BHARAT DIGITAL\nENHANCES BUSINESS\nEFFICIENCY AND GROWTH",
-    text: "We specialize in a comprehensive range services, including branding, digital marketing, content creation, and web design, all to meet the needs of each client.",
+    text: "Bharat Digital enhances business efficiency through smart, tech-driven solutions.We drive sustainable growth by transforming operations and strategy.",
   },
   {
     background: bg3.src,
-    title: "SMART DIGITAL\nBUSINESS FOR\nSOLUTIONS",
-    text: "We specialize in a comprehensive range services, including branding, digital marketing, content creation, and web design, all to meet the needs of each client.",
+    title: "FUTURE-READY\nDIGITAL SOLUTIONS\nFOR BUSINESS GROWTH",
+    text: "Bharat Digital blends technology and strategy to unlock your business potential.We simplify workflows, enhance productivity, and accelerate success.",
   },
 ];
 
