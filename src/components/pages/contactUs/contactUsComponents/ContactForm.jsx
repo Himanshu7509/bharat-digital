@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Phone, Mail, Clock, MapPin } from "lucide-react";
+import { Phone, Mail, Clock, MapPin, CheckCircle, Loader2 } from "lucide-react";
 import mapIcon from '@/components/assets/gmap.png'
 import { useState } from "react";
 import { postApi } from "@/components/utils/Api";
@@ -13,6 +13,10 @@ const ContactForm = () => {
     email: "",
     message: "",
   });
+  
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,10 +28,38 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    const response = await postApi(formData);
-    console.log(response);
+    setIsLoading(true);
+    setSubmitError(null);
+    
+    try {
+      console.log("Form submitted:", formData);
+      const response = await postApi(formData);
+      console.log(response);
+      
+      // Simulate API delay for better UX
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      setIsSubmitted(true);
+      // Reset form data
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitError("Failed to send message. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
+
+  const handleSendAnother = () => {
+    setIsSubmitted(false);
+    setSubmitError(null);
+  };
+
   return (
     <>
       <div className="min-h-screen bg-gray-50 py-16 px-4">
@@ -43,8 +75,6 @@ const ContactForm = () => {
                 </h1>
                 <p className="text-gray-600 text-lg leading-relaxed">
                We're here to help you! Reach out anytime—our team is ready to assist. Whether you have questions, feedback, or just want to connect, we're only a message away.
-
-
                 </p>
               </div>
 
@@ -58,7 +88,7 @@ const ContactForm = () => {
                     <h3 className="font-semibold text-gray-900 mb-1">
                       Call for inquiry
                     </h3>
-                    <p className="text-gray-600">+257 388-6895</p>
+                    <p className="text-gray-600">+1 615 802 7231</p>
                   </div>
                 </div>
 
@@ -124,104 +154,162 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <form onSubmit={handleSubmit}>
-              <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <div className="mb-6">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                    Contact Info
-                  </h2>
-                  <p className="text-gray-600">
-                    Nibh dis faucibus proin lacus tristique
-                  </p>
-                </div>
+            {/* Right Section - Contact Form */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              {!isSubmitted ? (
+                <form onSubmit={handleSubmit}>
+                  <div className="mb-6">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                      Contact Info
+                    </h2>
+                    <p className="text-gray-600">
+                      We typically respond within 24 hours.
+                    </p>
+                  </div>
 
-                <div className="space-y-6">
-                  {/* Name Fields */}
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  {submitError && (
+                    <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                      <p className="text-red-600 text-sm">{submitError}</p>
+                    </div>
+                  )}
+
+                  <div className="space-y-6">
+                    {/* Name Fields */}
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <label
+                          htmlFor="name"
+                          className="block text-sm font-medium text-gray-700 mb-2"
+                        >
+                          Name
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          placeholder="Your name"
+                          disabled={isLoading}
+                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors disabled:bg-gray-50 disabled:cursor-not-allowed"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="phone"
+                          className="block text-sm font-medium text-gray-700 mb-2"
+                        >
+                          Contact No
+                        </label>
+                        <input
+                          type="text"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          placeholder="Your Contact No"
+                          disabled={isLoading}
+                          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors disabled:bg-gray-50 disabled:cursor-not-allowed"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    {/* Email Field */}
                     <div>
                       <label
-                        htmlFor="firstName"
+                        htmlFor="email"
                         className="block text-sm font-medium text-gray-700 mb-2"
                       >
-                        Name
+                        Email Address
                       </label>
                       <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
                         onChange={handleInputChange}
-                        placeholder="Your name"
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
+                        placeholder="Your E-mail address"
+                        disabled={isLoading}
+                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors disabled:bg-gray-50 disabled:cursor-not-allowed"
+                        required
                       />
                     </div>
+
+                    {/* Message Field */}
                     <div>
                       <label
-                        htmlFor="lastName"
+                        htmlFor="message"
                         className="block text-sm font-medium text-gray-700 mb-2"
                       >
-                        Contact No
+                        Message
                       </label>
-                      <input
-                        type="text"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
                         onChange={handleInputChange}
-                        placeholder="Your Contact No  "
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
+                        rows={5}
+                        placeholder="Your message"
+                        disabled={isLoading}
+                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors resize-none disabled:bg-gray-50 disabled:cursor-not-allowed"
+                        required
                       />
                     </div>
-                  </div>
 
-                  {/* Email Field */}
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                    {/* Submit Button */}
+                    <button
+                      type="submit"
+                      disabled={isLoading}
+                      className="w-full bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-teal-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:hover:shadow-lg flex items-center justify-center gap-2"
                     >
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="Your E-mail address"
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
-                    />
+                      {isLoading ? (
+                        <>
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        "Send message"
+                      )}
+                    </button>
                   </div>
-
-                  {/* Message Field */}
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                </form>
+              ) : (
+                // Success State UI
+                <div className="text-center py-8">
+                  <div className="mb-6">
+                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="w-8 h-8 text-green-600" />
+                    </div>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                      Message Sent Successfully!
+                    </h2>
+                    <p className="text-gray-600 mb-6">
+                      Thank you for reaching out. We've received your message and will get back to you within 24 hours.
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <h3 className="font-semibold text-gray-900 mb-2">What happens next?</h3>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Our team will review your message</li>
+                        <li>• You'll receive a confirmation email shortly</li>
+                        <li>• We'll respond within 24 hours during business days</li>
+                      </ul>
+                    </div>
+                    
+                    <button
+                      onClick={handleSendAnother}
+                      className="w-full bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-teal-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
                     >
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      rows={5}
-                      placeholder="Your message"
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors resize-none"
-                    />
+                      Send Another Message
+                    </button>
                   </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-teal-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
-                  >
-                    Send message
-                  </button>
                 </div>
-              </div>
-            </form>
+              )}
+            </div>
           </div>
         </div>
       </div>

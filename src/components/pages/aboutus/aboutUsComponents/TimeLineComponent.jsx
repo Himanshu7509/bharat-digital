@@ -5,55 +5,65 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Timeline = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [activeYear, setActiveYear] = useState(2011);
+  const [activeYear, setActiveYear] = useState(2015);
   const scrollContainerRef = useRef(null);
   const itemRefs = useRef([]);
 
   const timelineData = [
     {
-      date: "January 2011",
-      year: 2011,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      date: "February 2012",
-      year: 2012,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      date: "March 2013",
-      year: 2013,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      date: "August 2014",
-      year: 2014,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      date: "November 2015",
+      date: "January 2015",
       year: 2015,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      description: "Company foundation and initial product development. We started with a vision to revolutionize digital experiences and began building our core technology platform with a small but passionate team."
     },
     {
-      date: "December 2016",
+      date: "March 2016",
       year: 2016,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      description: "First major product launch and initial customer acquisition. Our innovative solution gained traction in the market, securing our first enterprise clients and establishing key partnerships."
     },
     {
-      date: "April 2017", 
+      date: "June 2017",
       year: 2017,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      description: "Series A funding round completed successfully. Raised $5M to accelerate growth, expand our development team, and enhance our product offerings with advanced features and capabilities."
     },
     {
-      date: "May 2018",
+      date: "September 2018", 
       year: 2018,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      description: "International expansion begins with European market entry. Opened offices in London and Berlin, adapted our platform for global markets, and established strategic partnerships across Europe."
     },
     {
-      date: "June 2019",
+      date: "February 2019",
       year: 2019,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      description: "AI integration and machine learning capabilities launched. Introduced intelligent automation features that revolutionized user workflows and significantly improved platform efficiency and user satisfaction."
+    },
+    {
+      date: "August 2020",
+      year: 2020,
+      description: "Remote work solutions developed during global pandemic. Rapidly pivoted to support distributed teams, launched collaboration tools, and helped thousands of companies transition to remote work."
+    },
+    {
+      date: "November 2021",
+      year: 2021,
+      description: "Mobile-first redesign and cross-platform compatibility achieved. Launched native mobile applications, ensuring seamless user experience across all devices and significantly expanding our user base."
+    },
+    {
+      date: "April 2022",
+      year: 2022,
+      description: "Series B funding and strategic acquisitions completed. Secured $25M investment, acquired two complementary startups, and expanded our technology stack to offer comprehensive business solutions."
+    },
+    {
+      date: "July 2023",
+      year: 2023,
+      description: "Cloud infrastructure modernization and security enhancements. Migrated to advanced cloud architecture, implemented zero-trust security model, and achieved SOC 2 Type II compliance certification."
+    },
+    {
+      date: "December 2024",
+      year: 2024,
+      description: "Next-generation platform launch with advanced analytics. Introduced real-time data insights, predictive analytics, and customizable dashboards that transformed how businesses make data-driven decisions."
+    },
+    {
+      date: "March 2025",
+      year: 2025,
+      description: "Future innovations and sustainable technology initiatives. Leading the industry with carbon-neutral operations, quantum-ready security protocols, and breakthrough innovations in sustainable technology solutions."
     }
   ];
 

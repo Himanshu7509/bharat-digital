@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import banner from "@/components/assets/banner-image.png";
 import arrow from "@/components/assets/Vector.png";
+import Link from "next/link";
 
 const WhyChooseUs = () => {
   return (
@@ -73,10 +74,11 @@ const WhyChooseUs = () => {
               </span>
             </li>
           </ul>
-
+<Link href="/about">
           <button className="mt-6 bg-gradient-to-r from-[#4F6BF0] to-[#25BAC3] text-white px-6 py-3 rounded-sm font-semibold text-[4.5vw] sm:text-[3vw] md:text-[1.5vw]">
             More About Us
           </button>
+          </Link>
         </div>
       </div>
     </div>

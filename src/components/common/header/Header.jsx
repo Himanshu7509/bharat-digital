@@ -249,150 +249,155 @@ const Header = () => {
 
       {menuOpen && (
         <div
-          className="fixed inset-0 backdrop-blur-sm bg-opacity-50 z-40 lg:hidden"
+          className="fixed inset-0 bg-opacity-50 z-40 lg:hidden"
           onClick={closeSidebar}
         />
       )}
 
+      {/* Mobile Sidebar - Fixed to enable scrolling */}
       <div
-        className={`fixed top-0 left-0 h-full w-80 bg-white z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`fixed top-0 left-0 h-full w-80 bg-white z-50 transform transition-transform duration-300 ease-in-out lg:hidden flex flex-col ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between p-4 border-b">
+        {/* Fixed Header */}
+        <div className="flex items-center justify-between p-4 border-b flex-shrink-0">
           <Image src={BD} alt="Logo" className="w-[100px] h-[50px]" />
           <button onClick={closeSidebar} className="text-gray-600">
             <X size={24} />
           </button>
         </div>
 
-        <div className="flex flex-col p-4 space-y-4">
-          <Link
-            href="/"
-            onClick={closeSidebar}
-            className={getMobileLinkClasses("/")}
-          >
-            Home
-          </Link>
-          <Link
-            href="/about"
-            onClick={closeSidebar}
-            className={getMobileLinkClasses("/about")}
-          >
-            About Us
-          </Link>
-
-          <div className="py-2">
-            <button className={`flex items-center justify-between w-full ${getMobileLinkClasses("/services")}`}>
-              <Link href="/services" onClick={closeSidebar}>
-                Services
-              </Link>
-              <ChevronRight
-                onClick={() => setServicesOpen(!servicesOpen)}
-                size={18}
-                className={`transition-transform ${
-                  servicesOpen ? "rotate-90" : ""
-                }`}
-              />
-            </button>
-            {servicesOpen && (
-              <div className="mt-3 ml-4 space-y-3">
-                {services.map((service, index) => (
-                  <Link
-                    key={index}
-                    href={`/services/${service.path}`}
-                    onClick={closeSidebar}
-                    className={`flex items-center gap-3 py-2 rounded-md px-2 ${
-                      isActive(`/services/${service.path}`)
-                        ? "bg-blue-50 text-[#4F6BF0]"
-                        : "hover:bg-gray-100"
-                    }`}
-                  >
-                    <Image
-                      src={service.icon}
-                      alt={service.title}
-                      width={20}
-                      height={20}
-                    />
-                    <span className={`text-[16px] ${
-                      isActive(`/services/${service.path}`)
-                        ? "text-[#4F6BF0] font-semibold"
-                        : "text-gray-700"
-                    }`}>
-                      {service.title}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <Link
-            href="/portfolio"
-            onClick={closeSidebar}
-            className={getMobileLinkClasses("/portfolio")}
-          >
-            Portfolio
-          </Link>
-
-          <div className="py-2">
-            <button
-              onClick={() => setTeamMenuOpen(!teamMenuOpen)}
-              className={`flex items-center justify-between w-full ${getMobileLinkClasses("/team")}`}
+        {/* Scrollable Content */}
+        <div className="flex-1 overflow-y-auto">
+          <div className="flex flex-col p-4 space-y-4">
+            <Link
+              href="/"
+              onClick={closeSidebar}
+              className={getMobileLinkClasses("/")}
             >
-              Team
-              <ChevronRight
-                size={18}
-                className={`transition-transform ${
-                  teamMenuOpen ? "rotate-90" : ""
-                }`}
-              />
-            </button>
-            {teamMenuOpen && (
-              <div className="mt-3 ml-4 space-y-3">
-                {teamItems.map((item, index) => (
-                  <Link
-                    key={index}
-                    href={`/${item.path}`}
-                    onClick={closeSidebar}
-                    className={`flex items-center gap-3 py-2 rounded-md px-2 ${
-                      isActive(`/${item.path}`)
-                        ? "bg-blue-50 text-[#4F6BF0]"
-                        : "hover:bg-gray-100"
-                    }`}
-                  >
-                    <Image
-                      src={item.icon}
-                      alt={item.title}
-                      width={20}
-                      height={20}
-                    />
-                    <span className={`text-[16px] ${
-                      isActive(`/${item.path}`)
-                        ? "text-[#4F6BF0] font-semibold"
-                        : "text-gray-700"
-                    }`}>
-                      {item.title}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            )}
+              Home
+            </Link>
+            <Link
+              href="/about"
+              onClick={closeSidebar}
+              className={getMobileLinkClasses("/about")}
+            >
+              About Us
+            </Link>
+
+            <div className="py-2">
+              <button className={`flex items-center justify-between w-full ${getMobileLinkClasses("/services")}`}>
+                <Link href="/services" onClick={closeSidebar}>
+                  Services
+                </Link>
+                <ChevronRight
+                  onClick={() => setServicesOpen(!servicesOpen)}
+                  size={18}
+                  className={`transition-transform ${
+                    servicesOpen ? "rotate-90" : ""
+                  }`}
+                />
+              </button>
+              {servicesOpen && (
+                <div className="mt-3 ml-4 space-y-3">
+                  {services.map((service, index) => (
+                    <Link
+                      key={index}
+                      href={`/services/${service.path}`}
+                      onClick={closeSidebar}
+                      className={`flex items-center gap-3 py-2 rounded-md px-2 ${
+                        isActive(`/services/${service.path}`)
+                          ? "bg-blue-50 text-[#4F6BF0]"
+                          : "hover:bg-gray-100"
+                      }`}
+                    >
+                      <Image
+                        src={service.icon}
+                        alt={service.title}
+                        width={20}
+                        height={20}
+                      />
+                      <span className={`text-[16px] ${
+                        isActive(`/services/${service.path}`)
+                          ? "text-[#4F6BF0] font-semibold"
+                          : "text-gray-700"
+                      }`}>
+                        {service.title}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/portfolio"
+              onClick={closeSidebar}
+              className={getMobileLinkClasses("/portfolio")}
+            >
+              Portfolio
+            </Link>
+
+            <div className="py-2">
+              <button
+                onClick={() => setTeamMenuOpen(!teamMenuOpen)}
+                className={`flex items-center justify-between w-full ${getMobileLinkClasses("/team")}`}
+              >
+                Team
+                <ChevronRight
+                  size={18}
+                  className={`transition-transform ${
+                    teamMenuOpen ? "rotate-90" : ""
+                  }`}
+                />
+              </button>
+              {teamMenuOpen && (
+                <div className="mt-3 ml-4 space-y-3">
+                  {teamItems.map((item, index) => (
+                    <Link
+                      key={index}
+                      href={`/${item.path}`}
+                      onClick={closeSidebar}
+                      className={`flex items-center gap-3 py-2 rounded-md px-2 ${
+                        isActive(`/${item.path}`)
+                          ? "bg-blue-50 text-[#4F6BF0]"
+                          : "hover:bg-gray-100"
+                      }`}
+                    >
+                      <Image
+                        src={item.icon}
+                        alt={item.title}
+                        width={20}
+                        height={20}
+                      />
+                      <span className={`text-[16px] ${
+                        isActive(`/${item.path}`)
+                          ? "text-[#4F6BF0] font-semibold"
+                          : "text-gray-700"
+                      }`}>
+                        {item.title}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/blog"
+              onClick={closeSidebar}
+              className={getMobileLinkClasses("/blog")}
+            >
+              Blog
+            </Link>
+
+            <Link href="/contact" onClick={closeSidebar} className="mt-6">
+              <button className="w-full bg-gradient-to-r from-[#4F6BF0] to-[#25BAC3] text-white py-3 rounded-md text-[18px] font-medium hover:opacity-90">
+                Contact Us
+              </button>
+            </Link>
           </div>
-
-          <Link
-            href="/blog"
-            onClick={closeSidebar}
-            className={getMobileLinkClasses("/blog")}
-          >
-            Blog
-          </Link>
-
-          <Link href="/contact" onClick={closeSidebar} className="mt-6">
-            <button className="w-full bg-gradient-to-r from-[#4F6BF0] to-[#25BAC3] text-white py-3 rounded-md text-[18px] font-medium hover:opacity-90">
-              Contact Us
-            </button>
-          </Link>
         </div>
       </div>
     </>

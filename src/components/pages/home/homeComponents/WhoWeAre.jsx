@@ -62,21 +62,21 @@ const WhoWeAre = () => {
           <Image
             src={Img1}
             alt="Team Working"
-            className="w-full md:w-1/3 md:h-[390px] lg:h-[500px] object-cover rounded"
+            className="w-full md:w-1/3 md:h-[178.9px] lg:h-[449.1px] object-cover rounded mt-4"
           />
           <Image
             src={Img2}
             alt="Office View"
-            className="w-full md:w-1/3 md:h-[390px] lg:h-[500px] object-cover rounded"
+            className="w-full md:w-1/3 md:h-[192.8px] lg:h-[483.85px] object-cover rounded "
           />
           <div className="w-full md:w-1/3">
-            <p className="text-[#C4C4C4] mb-6 text-base sm:text-lg md:text-[20px] leading-relaxed font-light">
+            <p className="text-[#C4C4C4] mb-6 text-base sm:text-lg md:text-[11px] lg:text-[25px] leading-relaxed font-light">
               Digital agencies can vary in size and specialization. Some may
               focus on specific niches, such as healthcare or e-commerce, while
               others may offer a comprehensive.
             </p>
             <Link href="/about">
-              <button className="bg-gradient-to-r from-[#4F6BF0] to-[#25BAC3] text-white font-semibold rounded-sm w-full cursor-pointer sm:w-[210px] h-[60px] sm:h-[75px] text-lg sm:text-[25px] flex justify-center items-center">
+              <button className="bg-gradient-to-r from-[#4F6BF0] to-[#25BAC3] text-white font-semibold rounded-sm w-full cursor-pointer lg:w-[172px] lg:h-[61px] lg:text-[25px] sm:w-[210px] h-[60px] md:h-[16px] md:w-[72px] md:text-[12px] sm:h-[75px] text-lg sm:text-[25px] flex justify-center items-center">
                 About Us
               </button>
             </Link>
