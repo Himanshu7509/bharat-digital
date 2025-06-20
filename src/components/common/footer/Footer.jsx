@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import {
   Send,
   Instagram,
@@ -6,32 +7,117 @@ import {
   Facebook,
   Linkedin,
   Youtube,
+  CheckCircle,
 } from "lucide-react";
 import logo from "../../assets/bd.png";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    setIsLoading(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitted(true);
+      setIsLoading(false);
+      setEmail("");
+    }, 1000);
+  };
+
+  const resetForm = () => {
+    setIsSubmitted(false);
+    setEmail("");
+  };
+
+  // Social media links configuration
+  const socialLinks = [
+    {
+      Icon: Instagram,
+      url: "https://www.instagram.com/bharatdigital.co/",
+      label: "Instagram"
+    },
+   
+    {
+      Icon: Facebook,
+      url: "https://www.facebook.com/bharatdigital.co/",
+      label: "Facebook"
+    },
+    {
+      Icon: Linkedin,
+      url: "https://www.linkedin.com/company/bharatdigital-services/",
+      label: "LinkedIn"
+    },
+    {
+      Icon: Youtube,
+      url: "https://www.youtube.com/@bharatdigital-co",
+      label: "YouTube"
+    }
+  ];
+
   return (
     <footer className="bg-[#151515] text-white px-6 py-12">
       <div className="max-w-7xl mx-auto">
         {/* Newsletter & Socials */}
         <div className="mb-12">
-          <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
-            Don’t Missed Subscribed!
-          </h3>
-          <div className="flex flex-col sm:flex-row w-full max-w-md">
-            <div className="w-full max-w-md border border-gray-600 flex items-center px-4 py-2 bg-transparent">
-              <input
-                type="email"
-                placeholder="Enter Email"
-                className="flex-1 bg-transparent text-white placeholder-gray-400 focus:outline-none"
-              />
-              <button className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#4F6BF0] hover:bg-[#3f53d9] transition-colors">
-                <Send size={20} className="text-white" />
+          {!isSubmitted ? (
+            <>
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
+                Don't Missed Subscribed!
+              </h3>
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row w-full max-w-md">
+                <div className="w-full max-w-md border border-gray-600 flex items-center px-4 py-2 bg-transparent">
+                  <input
+                    type="email"
+                    placeholder="Enter Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="flex-1 bg-transparent text-white placeholder-gray-400 focus:outline-none"
+                    disabled={isLoading}
+                    required
+                  />
+                  <button 
+                    type="submit"
+                    disabled={isLoading || !email.trim()}
+                    className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#4F6BF0] hover:bg-[#3f53d9] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isLoading ? (
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    ) : (
+                      <Send size={20} className="text-white" />
+                    )}
+                  </button>
+                </div>
+              </form>
+            </>
+          ) : (
+            <div className="text-center py-4">
+              <div className="flex items-center justify-center mb-4">
+                <CheckCircle size={48} className="text-green-500 mr-3" />
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-green-500">
+                    Successfully Subscribed!
+                  </h3>
+                  <p className="text-gray-400 mt-2">
+                    Thank you for subscribing to our newsletter.
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={resetForm}
+                className="px-6 py-2 bg-[#4F6BF0] hover:bg-[#3f53d9] rounded-full transition-colors text-sm"
+              >
+                Subscribe Another Email
               </button>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Main Footer Content */}
@@ -42,17 +128,19 @@ export default function Footer() {
               Contact with us
             </h3>
             <div className="flex flex-wrap gap-3">
-              {[Instagram, Twitter, Facebook, Linkedin, Youtube].map(
-                (Icon, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    className="w-10 h-10 border border-gray-600 rounded-full flex items-center justify-center hover:border-gray-400 transition-colors"
-                  >
-                    <Icon size={18} />
-                  </a>
-                )
-              )}
+              {socialLinks.map(({ Icon, url, label }, i) => (
+               <a
+  key={i}
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`Follow us on ${label}`}
+  className="w-10 h-10 border border-gray-600 rounded-full flex items-center justify-center hover:border-gray-400 hover:bg-gray-800 transition-colors"
+>
+  <Icon size={18} className="text-white pointer-events-none" />
+</a>
+
+              ))}
             </div>
           </div>
 
@@ -74,7 +162,7 @@ export default function Footer() {
                   <Link
                     key={i}
                     href={item.path}
-                    className="block hover:text-white transition-colors"
+                    className="block hover:text-[#4F6BF0] transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -97,7 +185,7 @@ export default function Footer() {
                   <Link
                     key={i}
                     href={item.path}
-                    className="block hover:text-white transition-colors"
+                    className="block hover:text-[#4F6BF0] transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -122,9 +210,14 @@ export default function Footer() {
           </div>
           <div>
             <p className="text-gray-400 mb-1">Email Now</p>
-            <p className="text-lg font-semibold break-all">
+            <a 
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=info@bharatdigital.co"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg font-semibold break-all hover:text-[#4F6BF0] transition-colors cursor-pointer"
+            >
               info@bharatdigital.co
-            </p>
+            </a>
           </div>
         </div>
 
